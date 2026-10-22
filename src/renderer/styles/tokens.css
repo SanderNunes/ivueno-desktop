@@ -1,0 +1,48 @@
+/* Design tokens from the Ivuenu design system (desktop/project-design/Main.dc.html).
+   Same token names in both themes. Dark is warm ink, not pure black. Red is reserved for "recording". */
+
+:root {
+  --bg: #F7F5F2; --surface: #FFFEFC; --sunken: #EFECE7; --border: #E2DDD5; --border-strong: #CFC8BD;
+  --text: #1F1D1A; --text-2: #57524B; --text-3: #6B655C;
+  --accent: #1E6A58; --accent-hover: #17554A; --accent-soft: #E2EEE9; --on-accent: #FFFEFC;
+  --rec: #D92D20; --rec-text: #B42318; --rec-soft: #FBE8E6; --focus: #1E6A58;
+  --warning: #7A5200; --warning-bg: #FCF1D3; --error: #9C1F5A; --error-bg: #F8E6EF; --error-line: #E8C3D5;
+  --success: #3B6E22; --success-bg: #E9F1E1; --info: #3C4A8C; --info-bg: #E8EBF7;
+  --mark: #FCF1D3; --progress-paused: #A39C91; --meter-off: #CFC8BD;
+  --spk-0: #4A55C8; --spk-1: #A8660E; --spk-2: #12806F; --spk-3: #8A45C0; --spk-4: #1F78AE; --spk-5: #5F7A12; --spk-6: #87573A; --spk-7: #5B6878;
+  --on-spk: #FFFEFC;
+  --shadow-1: 0 1px 2px rgba(31, 29, 26, .06); --shadow-2: 0 8px 24px rgba(31, 29, 26, .10); --shadow-3: 0 16px 48px rgba(31, 29, 26, .16);
+  --r-sm: 6px; --r-md: 8px; --r-lg: 10px;
+  --ease: cubic-bezier(.2, 0, 0, 1);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #151412; --surface: #1C1B19; --sunken: #121110; --border: #312E2A; --border-strong: #45413B;
+  --text: #EDE9E3; --text-2: #B9B2A8; --text-3: #A0998F;
+  --accent: #63C3A6; --accent-hover: #7ED1B7; --accent-soft: #183229; --on-accent: #0D1F1A;
+  --rec: #FF5B4F; --rec-text: #FF8A80; --rec-soft: #3A1A17; --focus: #63C3A6;
+  --warning: #F0C25A; --warning-bg: #33280F; --error: #F08DB9; --error-bg: #3A1626; --error-line: #5C2B43;
+  --success: #9BCF7A; --success-bg: #1E2A16; --info: #A9B5F2; --info-bg: #1E2340;
+  --mark: #4A3B14; --progress-paused: #6B655C; --meter-off: #45413B;
+  --spk-0: #9AA2F5; --spk-1: #E3A75A; --spk-2: #5FCDB9; --spk-3: #C79AF0; --spk-4: #73B9E6; --spk-5: #B2CB5E; --spk-6: #D2A07E; --spk-7: #A9B4C2;
+  --on-spk: #151412;
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, .35); --shadow-2: 0 8px 24px rgba(0, 0, 0, .45); --shadow-3: 0 16px 48px rgba(0, 0, 0, .45);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #151412; --surface: #1C1B19; --sunken: #121110; --border: #312E2A; --border-strong: #45413B;
+    --text: #EDE9E3; --text-2: #B9B2A8; --text-3: #A0998F;
+    --accent: #63C3A6; --accent-hover: #7ED1B7; --accent-soft: #183229; --on-accent: #0D1F1A;
+    --rec: #FF5B4F; --rec-text: #FF8A80; --rec-soft: #3A1A17; --focus: #63C3A6;
+    --warning: #F0C25A; --warning-bg: #33280F; --error: #F08DB9; --error-bg: #3A1626; --error-line: #5C2B43;
+    --success: #9BCF7A; --success-bg: #1E2A16; --info: #A9B5F2; --info-bg: #1E2340;
+    --mark: #4A3B14; --progress-paused: #6B655C; --meter-off: #45413B;
+    --spk-0: #9AA2F5; --spk-1: #E3A75A; --spk-2: #5FCDB9; --spk-3: #C79AF0; --spk-4: #73B9E6; --spk-5: #B2CB5E; --spk-6: #D2A07E; --spk-7: #A9B4C2;
+    --on-spk: #151412;
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, .35); --shadow-2: 0 8px 24px rgba(0, 0, 0, .45); --shadow-3: 0 16px 48px rgba(0, 0, 0, .45);
+  }
+}

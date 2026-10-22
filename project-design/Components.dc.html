@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<title>Ivuenu · Componentes</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1E6A58}a:hover{color:#17554A}
+button,input,select{font-family:inherit}
+@keyframes ivPulse{0%,100%{opacity:1}50%{opacity:.4}}
+.iv-rec{animation:ivPulse 2s ease-in-out infinite}
+@keyframes ivShimmer{0%{background-position:-200px 0}100%{background-position:200px 0}}
+.iv-skel{background:linear-gradient(90deg,#EFECE7 0,#E6E2DB 50%,#EFECE7 100%);background-size:400px 100%;animation:ivShimmer 1.4s linear infinite}
+@media (prefers-reduced-motion: reduce){.iv-rec,.iv-skel{animation:none}}
+</style>
+</helmet>
+<div style="width: 1440px; min-height: 3200px; box-sizing: border-box; background: #F7F5F2; color: #1F1D1A; font-family: 'Atkinson Hyperlegible Next', 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 20px; padding: 72px 80px; display: flex; flex-direction: column; gap: 40px">
+
+<header style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #E2DDD5; padding-bottom: 24px">
+<h1 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 600">Componentes</h1>
+<span style="color: #57524B">Alturas: 28 compacto · 36 padrão · 44 toque. Todos os alvos ≥ 24 px; no telemóvel ≥ 44 px.</span>
+</header>
+
+<section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Botões</h2>
+<div style="display: grid; grid-template-columns: 110px repeat(4, minmax(0, 1fr)); gap: 12px 12px; align-items: center; font-size: 12px; color: #57524B">
+<span></span><span>normal</span><span>hover</span><span>foco</span><span>desativado</span>
+<span>primário</span>
+<button style="height: 36px; padding: 0 16px; border-radius: 8px; border: 0; background: #1E6A58; color: #FFFEFC; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; justify-content: center">Nova reunião</button>
+<button style="height: 36px; padding: 0 16px; border-radius: 8px; border: 0; background: #17554A; color: #FFFEFC; font-size: 14px; font-weight: 600">Nova reunião</button>
+<button style="height: 36px; padding: 0 16px; border-radius: 8px; border: 0; background: #1E6A58; color: #FFFEFC; font-size: 14px; font-weight: 600; outline: 2px solid #1E6A58; outline-offset: 2px">Nova reunião</button>
+<button disabled style="height: 36px; padding: 0 16px; border-radius: 8px; border: 0; background: #E2DDD5; color: #6B655C; font-size: 14px; font-weight: 600">Nova reunião</button>
+<span>secundário</span>
+<button style="height: 36px; padding: 0 16px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 14px; font-weight: 600">Exportar</button>
+<button style="height: 36px; padding: 0 16px; border-radius: 8px; border: 1px solid #CFC8BD; background: #EFECE7; color: #1F1D1A; font-size: 14px; font-weight: 600">Exportar</button>
+<button style="height: 36px; padding: 0 16px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 14px; font-weight: 600; outline: 2px solid #1E6A58; outline-offset: 2px">Exportar</button>
+<button disabled style="height: 36px; padding: 0 16px; border-radius: 8px; border: 1px solid #E2DDD5; background: #FFFEFC; color: #6B655C; font-size: 14px; font-weight: 600">Exportar</button>
+<span>discreto</span>
+<button style="height: 36px; padding: 0 12px; border-radius: 8px; border: 0; background: transparent; color: #1F1D1A; font-size: 14px; font-weight: 600">Opções</button>
+<button style="height: 36px; padding: 0 12px; border-radius: 8px; border: 0; background: #EFECE7; color: #1F1D1A; font-size: 14px; font-weight: 600">Opções</button>
+<button style="height: 36px; padding: 0 12px; border-radius: 8px; border: 0; background: transparent; color: #1F1D1A; font-size: 14px; font-weight: 600; outline: 2px solid #1E6A58; outline-offset: 2px">Opções</button>
+<button disabled style="height: 36px; padding: 0 12px; border-radius: 8px; border: 0; background: transparent; color: #6B655C; font-size: 14px; font-weight: 600">Opções</button>
+<span>destrutivo</span>
+<button style="height: 36px; padding: 0 16px; border-radius: 8px; border: 0; background: #9C1F5A; color: #FFFEFC; font-size: 14px; font-weight: 600">Apagar reunião</button>
+<button style="height: 36px; padding: 0 16px; border-radius: 8px; border: 0; background: #80184A; color: #FFFEFC; font-size: 14px; font-weight: 600">Apagar reunião</button>
+<button style="height: 36px; padding: 0 16px; border-radius: 8px; border: 0; background: #9C1F5A; color: #FFFEFC; font-size: 14px; font-weight: 600; outline: 2px solid #9C1F5A; outline-offset: 2px">Apagar reunião</button>
+<button disabled style="height: 36px; padding: 0 16px; border-radius: 8px; border: 0; background: #E2DDD5; color: #6B655C; font-size: 14px; font-weight: 600">Apagar reunião</button>
+<span>ícone</span>
+<span style="display: flex; gap: 8px"><button aria-label="Copiar" style="width: 36px; height: 36px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8.5" y="8.5" width="11" height="11" rx="2"></rect><path d="M15.5 8.5V6A1.5 1.5 0 0 0 14 4.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"></path></svg></button><button aria-label="Mais ações" style="width: 36px; height: 36px; border-radius: 8px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="#1F1D1A" aria-hidden="true"><circle cx="5.5" cy="12" r="1.4"></circle><circle cx="12" cy="12" r="1.4"></circle><circle cx="18.5" cy="12" r="1.4"></circle></svg></button></span>
+<span style="grid-column: span 3; color: #6B655C">Botão só-ícone leva sempre aria-label e dica ao passar.</span>
+</div>
+<div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; padding-top: 4px; border-top: 1px solid #E2DDD5">
+<span style="font-size: 12px; color: #57524B; padding-top: 12px">Parar · neutro forte, nunca vermelho:</span>
+<button style="margin-top: 12px; height: 36px; padding: 0 14px; border-radius: 8px; border: 0; background: #1F1D1A; color: #FFFEFC; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3" fill="#FFFEFC"></rect></svg>Parar</button>
+<button style="margin-top: 12px; height: 44px; padding: 0 20px; border-radius: 8px; border: 0; background: #1E6A58; color: #FFFEFC; font-size: 16px; font-weight: 600">Começar a gravar</button>
+</div>
+</div>
+
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Campos e controlos</h2>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="c-title" style="font-size: 13px; font-weight: 600">Título</label><input id="c-title" value="Revisão de preços Q4" style="height: 36px; padding: 0 12px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 14px"><span style="font-size: 12px; color: #6B655C">Opcional. Dás nome depois.</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="c-email" style="font-size: 13px; font-weight: 600">Email</label><input id="c-email" value="ana.silva@exemplo" style="height: 36px; padding: 0 12px; border-radius: 6px; border: 1.5px solid #9C1F5A; background: #FFFEFC; color: #1F1D1A; font-size: 14px"><span style="font-size: 12px; color: #9C1F5A; display: flex; gap: 6px; align-items: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9C1F5A" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5v5.5M12 16.2v.3"></path></svg>Falta o domínio, por exemplo .ao</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="c-search" style="font-size: 13px; font-weight: 600">Pesquisa</label><div style="position: relative; display: flex"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B655C" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" style="position: absolute; left: 10px; top: 9px"><circle cx="11" cy="11" r="6.5"></circle><path d="m20 20-4.2-4.2"></path></svg><input id="c-search" placeholder="Pesquisar reuniões" style="flex: 1; height: 36px; padding: 0 12px 0 36px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 14px"></div></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="c-sel" style="font-size: 13px; font-weight: 600">Estilo das notas</label><select id="c-sel" style="height: 36px; padding: 0 10px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 14px"><option>Geral</option><option>Um para um</option><option>Stand-up</option><option>Entrevista</option><option>Chamada de vendas</option><option>Brainstorm</option><option>Escolhe por mim</option></select></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #E2DDD5; padding-top: 16px">
+<label style="display: flex; align-items: center; justify-content: space-between; gap: 16px"><span style="display: flex; flex-direction: column"><span style="font-weight: 600">Guardar a transcrição depois das notas</span><span style="font-size: 12px; color: #6B655C">Desligado = só notas: a transcrição é apagada depois</span></span><input type="checkbox" role="switch" checked aria-label="Guardar a transcrição" style="position: absolute; opacity: 0; width: 1px; height: 1px"><span aria-hidden="true" style="width: 40px; height: 24px; border-radius: 999px; background: #1E6A58; position: relative; flex: none"><span style="position: absolute; top: 3px; left: 19px; width: 18px; height: 18px; border-radius: 999px; background: #FFFEFC"></span></span></label>
+<label style="display: flex; align-items: center; justify-content: space-between; gap: 16px"><span style="display: flex; flex-direction: column"><span style="font-weight: 600">Ocultar detalhes sensíveis</span><span style="font-size: 12px; color: #6B655C">Números de cartão e palavras-passe ficam ••••</span></span><input type="checkbox" role="switch" aria-label="Ocultar detalhes sensíveis" style="position: absolute; opacity: 0; width: 1px; height: 1px"><span aria-hidden="true" style="width: 40px; height: 24px; border-radius: 999px; background: #CFC8BD; position: relative; flex: none"><span style="position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 999px; background: #FFFEFC"></span></span></label>
+</div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: center; border-top: 1px solid #E2DDD5; padding-top: 16px">
+<div role="radiogroup" aria-label="Idioma falado" style="display: flex; padding: 3px; background: #EFECE7; border-radius: 8px; gap: 2px">
+<button role="radio" aria-checked="true" style="height: 30px; padding: 0 12px; border-radius: 6px; border: 0; background: #FFFEFC; box-shadow: 0 1px 2px rgba(31,29,26,.10); font-size: 13px; font-weight: 600; color: #1F1D1A">Auto</button>
+<button role="radio" aria-checked="false" style="height: 30px; padding: 0 12px; border-radius: 6px; border: 0; background: transparent; font-size: 13px; color: #57524B">Português</button>
+<button role="radio" aria-checked="false" style="height: 30px; padding: 0 12px; border-radius: 6px; border: 0; background: transparent; font-size: 13px; color: #57524B">English</button>
+<button role="radio" aria-checked="false" style="height: 30px; padding: 0 12px; border-radius: 6px; border: 0; background: transparent; font-size: 13px; color: #57524B">Mais</button>
+</div>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<span style="height: 28px; padding: 0 6px 0 10px; border-radius: 6px; background: #EFECE7; display: inline-flex; align-items: center; gap: 6px; font-size: 13px">Bruno Fernandes<button aria-label="Remover Bruno Fernandes" style="width: 20px; height: 20px; border: 0; background: transparent; border-radius: 4px; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></span>
+<span style="height: 28px; padding: 0 10px; border-radius: 6px; background: #E2EEE9; color: #17554A; display: inline-flex; align-items: center; font-size: 13px; font-weight: 600">Clientes</span>
+</div>
+</div>
+<div role="tablist" style="display: flex; gap: 24px; border-bottom: 1px solid #E2DDD5">
+<button role="tab" aria-selected="true" style="height: 40px; padding: 0 2px; border: 0; background: transparent; border-bottom: 2px solid #1E6A58; font-size: 14px; font-weight: 600; color: #1F1D1A; margin-bottom: -1px">Notas</button>
+<button role="tab" aria-selected="false" style="height: 40px; padding: 0 2px; border: 0; background: transparent; font-size: 14px; color: #57524B">Transcrição</button>
+<button role="tab" aria-selected="false" style="height: 40px; padding: 0 2px; border: 0; background: transparent; font-size: 14px; color: #57524B; display: flex; align-items: center; gap: 6px">Tarefas <span style="min-width: 20px; height: 20px; padding: 0 6px; box-sizing: border-box; border-radius: 999px; background: #EFECE7; font-size: 12px; display: inline-flex; align-items: center; justify-content: center">3</span></button>
+<button role="tab" aria-selected="false" style="height: 40px; padding: 0 2px; border: 0; background: transparent; font-size: 14px; color: #57524B">Conversa</button>
+</div>
+</div>
+</section>
+
+<section style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><h2 style="margin: 0; font-size: 16px; font-weight: 700">Gravação e estado</h2><span style="font-size: 13px; color: #6B655C">O indicador a gravar tem a mesma forma em todo o lado: barra de topo, mini gravador, tabuleiro, linha da lista.</span></div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; color: #57524B; font-weight: 600">Indicador a gravar</span>
+<div role="status" aria-label="A gravar, 12 minutos e 40 segundos" style="display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; height: 32px; padding: 0 14px 0 12px; background: #FBE8E6; border-radius: 999px"><span class="iv-rec" style="width: 10px; height: 10px; border-radius: 999px; background: #D92D20"></span><span style="font-weight: 600; color: #B42318">A gravar</span><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-weight: 500">00:12:40</span></div>
+<div style="display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; height: 32px; padding: 0 14px 0 12px; background: #EFECE7; border-radius: 999px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #57524B"></span><span style="font-weight: 600; color: #57524B">Em pausa</span><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-weight: 500; color: #57524B">00:12:40</span></div>
+<span style="font-size: 12px; color: #6B655C">Tempo em Mono tabular: não salta ao mudar de dígito.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; color: #57524B; font-weight: 600">Selo de consentimento</span>
+<span style="display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border-radius: 6px; background: #E9F1E1; color: #3B6E22; font-size: 13px; font-weight: 600"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3B6E22" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6z"></path><path d="m9 12 2.2 2.2L15.5 10"></path></svg>Participantes avisados</span>
+<span style="display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border-radius: 6px; background: #EFECE7; color: #57524B; font-size: 13px; font-weight: 600"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20c.8-3.5 3.6-5.5 7-5.5s6.2 2 7 5.5"></path></svg>Só eu</span>
+<span style="display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border-radius: 6px; background: #FCF1D3; color: #7A5200; font-size: 13px; font-weight: 600"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6z"></path><path d="M12 8.5v4M12 15.5v.3"></path></svg>Aviso por confirmar</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; color: #57524B; font-weight: 600">Chip de estado</span>
+<span style="display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; height: 24px; padding: 0 8px; color: #57524B; font-size: 12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Guardado</span>
+<span style="display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; height: 24px; padding: 0 8px; color: #57524B; font-size: 12px"><span style="width: 6px; height: 6px; border-radius: 999px; background: #A39C91"></span>A guardar…</span>
+<span style="display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; height: 24px; padding: 0 8px; border-radius: 6px; background: #FCF1D3; color: #7A5200; font-size: 12px; font-weight: 600"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7A5200" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4.5v4h-4"></path></svg>A religar…</span>
+<span style="display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; height: 24px; padding: 0 8px; border-radius: 6px; background: #F8E6EF; color: #9C1F5A; font-size: 12px; font-weight: 600"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9C1F5A" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5v5.5M12 16.2v.3"></path></svg>Conflito nas notas</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; color: #57524B; font-weight: 600">Medidor de nível</span>
+<div style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" aria-label="Microfone" role="img"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"></path></svg><span style="display: flex; gap: 2px; align-items: flex-end; height: 16px" aria-hidden="true"><span style="width: 4px; height: 6px; background: #1E6A58; border-radius: 1px"></span><span style="width: 4px; height: 9px; background: #1E6A58; border-radius: 1px"></span><span style="width: 4px; height: 12px; background: #1E6A58; border-radius: 1px"></span><span style="width: 4px; height: 14px; background: #1E6A58; border-radius: 1px"></span><span style="width: 4px; height: 16px; background: #CFC8BD; border-radius: 1px"></span></span><span style="font-size: 12px; color: #57524B">Microfone</span></div>
+<div style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" aria-label="Som do computador" role="img"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg><span style="display: flex; gap: 2px; align-items: flex-end; height: 16px" aria-hidden="true"><span style="width: 4px; height: 6px; background: #1E6A58; border-radius: 1px"></span><span style="width: 4px; height: 9px; background: #1E6A58; border-radius: 1px"></span><span style="width: 4px; height: 12px; background: #CFC8BD; border-radius: 1px"></span><span style="width: 4px; height: 14px; background: #CFC8BD; border-radius: 1px"></span><span style="width: 4px; height: 16px; background: #CFC8BD; border-radius: 1px"></span></span><span style="font-size: 12px; color: #57524B">Som do PC</span></div>
+<div style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A5200" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"></path></svg><span style="font-size: 12px; color: #7A5200; font-weight: 600">Sem som há 30 s · verifica o microfone</span></div>
+</div>
+</div>
+</section>
+
+<section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Linha de transcrição</h2>
+<div style="display: grid; grid-template-columns: 4px minmax(0, 1fr); gap: 12px">
+<span style="background: #4A55C8; border-radius: 2px"></span>
+<div style="display: flex; flex-direction: column; gap: 2px"><div style="display: flex; gap: 10px; align-items: baseline"><strong>Bruno Fernandes</strong><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 12px; color: #6B655C">00:11:40</span></div><p style="margin: 0; font-size: 16px; line-height: 26px">Acho que devíamos subir os preços em cinco por cento a partir de Janeiro.</p></div>
+</div>
+<div style="display: grid; grid-template-columns: 4px minmax(0, 1fr); gap: 12px">
+<span style="background: #8A45C0; border-radius: 2px"></span>
+<div style="display: flex; flex-direction: column; gap: 2px"><div style="display: flex; gap: 10px; align-items: baseline"><strong>Domingos Kiala</strong><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 12px; color: #6B655C">00:12:02</span><span style="font-size: 11px; font-weight: 600; color: #57524B; border: 1px solid #CFC8BD; border-radius: 4px; padding: 0 4px">EN</span></div><p lang="en" style="margin: 0; font-size: 16px; line-height: 26px">If we go to five percent, we need a retention offer ready.</p><p style="margin: 0; font-size: 14px; line-height: 22px; color: #57524B; display: flex; gap: 6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B655C" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" style="margin-top: 4px; flex: none"><circle cx="12" cy="12" r="8.5"></circle><path d="M3.5 12h17M12 3.5c2.5 2.5 3.5 5.5 3.5 8.5s-1 6-3.5 8.5c-2.5-2.5-3.5-5.5-3.5-8.5s1-6 3.5-8.5"></path></svg>Se formos para cinco por cento, precisamos de uma oferta de retenção pronta.</p></div>
+</div>
+<div style="display: grid; grid-template-columns: 4px minmax(0, 1fr); gap: 12px">
+<span style="background: #4A55C8; border-radius: 2px; opacity: .5"></span>
+<div style="display: flex; flex-direction: column; gap: 2px"><div style="display: flex; gap: 10px; align-items: baseline"><strong>Bruno Fernandes</strong><span style="font-size: 12px; color: #6B655C">a falar…</span></div><p style="margin: 0; font-size: 16px; line-height: 26px; color: #57524B">Perfeito. E alguém tem de avisar o</p></div>
+</div>
+<span style="font-size: 12px; color: #6B655C">Marcador 4 px na cor do orador · nome em texto · hora Mono 12 · linha parcial em text-2 até fechar · tradução por baixo, 14 px, com ícone de idioma.</span>
+</div>
+
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Oradores, avatares, linha de tarefa</h2>
+<div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center">
+<button style="height: 32px; padding: 0 12px 0 4px; border-radius: 999px; border: 1px solid #E2DDD5; background: #FFFEFC; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #1F1D1A"><span style="width: 24px; height: 24px; border-radius: 999px; background: #4A55C8; color: #FFFEFC; font-size: 11px; display: flex; align-items: center; justify-content: center">BF</span>Bruno Fernandes</button>
+<span style="height: 32px; padding: 0 4px; border-radius: 999px; border: 1.5px solid #1E6A58; background: #FFFEFC; display: inline-flex; align-items: center; gap: 8px"><span style="width: 24px; height: 24px; border-radius: 999px; background: #1F78AE; color: #FFFEFC; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center">O5</span><label for="c-rename" style="position: absolute; width: 1px; height: 1px; overflow: hidden">Nome do orador</label><input id="c-rename" value="Esperança P" style="width: 110px; border: 0; outline: 0; font-size: 13px; background: transparent"><button aria-label="Guardar nome" style="width: 24px; height: 24px; border-radius: 999px; border: 0; background: #1E6A58; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFEFC" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></button></span>
+<span style="display: flex; align-items: center"><span style="width: 28px; height: 28px; border-radius: 999px; background: #4A55C8; color: #FFFEFC; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; border: 2px solid #FFFEFC">AS</span><span style="width: 28px; height: 28px; margin-left: -8px; border-radius: 999px; background: #A8660E; color: #FFFEFC; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; border: 2px solid #FFFEFC">BF</span><span style="width: 28px; height: 28px; margin-left: -8px; border-radius: 999px; background: #12806F; color: #FFFEFC; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; border: 2px solid #FFFEFC">CN</span><span style="width: 28px; height: 28px; margin-left: -8px; border-radius: 999px; background: #EFECE7; color: #1F1D1A; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; border: 2px solid #FFFEFC">+2</span></span>
+</div>
+<div style="display: grid; grid-template-columns: 24px minmax(0, 1fr) auto; gap: 12px; align-items: start; padding: 12px; border: 1px solid #E2DDD5; border-radius: 8px">
+<input type="checkbox" aria-label="Concluir: Enviar a nova lista de preços" style="width: 20px; height: 20px; margin: 2px 0 0; accent-color: #1E6A58">
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 15px">Enviar a nova lista de preços</span><span style="display: flex; gap: 12px; font-size: 12px; color: #57524B"><span>Carla Neto</span><span>sexta-feira</span><a href="#" style="color: #57524B">Revisão de preços Q4</a></span></div>
+<span style="display: flex; gap: 2px"><button aria-label="Útil" style="width: 28px; height: 28px; border: 0; background: transparent; border-radius: 6px; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v10H4.5a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1zM7 10l4-6.5a2 2 0 0 1 3 1.9L13.5 9H19a2 2 0 0 1 2 2.3l-1.2 7A2 2 0 0 1 17.8 20H7"></path></svg></button><button aria-label="Não útil" style="width: 28px; height: 28px; border: 0; background: transparent; border-radius: 6px; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform: rotate(180deg)"><path d="M7 10v10H4.5a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1zM7 10l4-6.5a2 2 0 0 1 3 1.9L13.5 9H19a2 2 0 0 1 2 2.3l-1.2 7A2 2 0 0 1 17.8 20H7"></path></svg></button><button aria-label="Ocultar tarefa" style="width: 28px; height: 28px; border: 0; background: transparent; border-radius: 6px; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M3 3l18 18M10.6 6.1A9.6 9.6 0 0 1 12 6c5 0 8.5 4.5 9 6-.3.8-1.2 2.3-2.6 3.6M6.5 7.6C4.5 9 3.3 11 3 12c.5 1.5 4 6 9 6 1.6 0 3-.4 4.2-1.1"></path></svg></button></span>
+</div>
+<div style="display: grid; grid-template-columns: 24px minmax(0, 1fr) auto; gap: 12px; align-items: start; padding: 12px; border: 1px solid #E2DDD5; border-radius: 8px">
+<input type="checkbox" aria-label="Concluir: Avisar o suporte" style="width: 20px; height: 20px; margin: 2px 0 0; accent-color: #1E6A58">
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 15px">Avisar o suporte</span><span style="display: flex; gap: 12px; font-size: 12px; color: #57524B"><button style="border: 1px dashed #CFC8BD; background: transparent; border-radius: 4px; padding: 0 6px; font-size: 12px; color: #57524B; height: 22px">+ Dono</button><button style="border: 1px dashed #CFC8BD; background: transparent; border-radius: 4px; padding: 0 6px; font-size: 12px; color: #57524B; height: 22px">+ Prazo</button></span></div>
+<span></span>
+</div>
+<div style="display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; align-items: start; padding: 12px; border-radius: 8px; background: #F7F5F2">
+<input type="checkbox" checked aria-label="Concluída: Marcar reunião com o financeiro" style="width: 20px; height: 20px; margin: 2px 0 0; accent-color: #1E6A58">
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 15px; text-decoration: line-through; color: #57524B">Marcar reunião com o financeiro</span><span style="font-size: 12px; color: #6B655C">Bruno Fernandes · próxima semana · concluída</span></div>
+</div>
+</div>
+</section>
+
+<section style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Linha de reunião</h2>
+<a href="#" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; padding: 12px; border-radius: 8px; text-decoration: none; color: #1F1D1A; background: #F7F5F2"><span style="font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Chamada com cliente: Banco Exemplo</span><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 12px; color: #57524B">14:00</span><span style="display: flex; gap: 10px; font-size: 12px; color: #57524B; flex-wrap: wrap"><span>38 min</span><span>Clientes</span><span>2 tarefas</span></span><span style="font-size: 12px; color: #57524B">Pronta</span></a>
+<a href="#" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; padding: 12px; border-radius: 8px; text-decoration: none; color: #1F1D1A"><span style="font-weight: 600">Revisão de preços Q4</span><span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #B42318"><span class="iv-rec" style="width: 8px; height: 8px; border-radius: 999px; background: #D92D20"></span>A gravar</span><span style="font-size: 12px; color: #57524B">Equipa · começou 10:30</span><span></span></a>
+<a href="#" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; padding: 12px; border-radius: 8px; text-decoration: none; color: #1F1D1A"><span style="font-weight: 600">Entrevista: analista financeiro</span><span style="font-size: 12px; color: #17554A; font-weight: 600">A escrever notas…</span><span style="font-size: 12px; color: #57524B">52 min · Recrutamento</span><span></span></a>
+<span style="font-size: 12px; color: #6B655C">Hover = sunken. A linha inteira é um link. Estado à direita: só “A gravar” usa vermelho.</span>
+</div>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Cartão de evento</h2>
+<div style="border: 1px solid #E2DDD5; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; gap: 12px"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 12px; color: #17554A; font-weight: 500">Hoje · 14:00–14:45</span><strong style="font-size: 15px">Chamada com cliente: Banco Exemplo</strong></span></div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span style="font-size: 12px; color: #57524B">Ana, Domingos, Esperança</span><button style="height: 32px; padding: 0 12px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 13px; font-weight: 600; color: #1F1D1A">Tomar notas</button></div>
+</div>
+<div style="border: 1px solid #E2DDD5; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 12px; background: #F7F5F2">
+<div style="display: flex; flex-direction: column; gap: 2px"><span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #B42318; font-weight: 600"><span class="iv-rec" style="width: 8px; height: 8px; border-radius: 999px; background: #D92D20"></span>A gravar · 00:12:40</span><strong style="font-size: 15px">Revisão de preços Q4</strong></div>
+<div style="display: flex; justify-content: flex-end"><button style="height: 32px; padding: 0 12px; border-radius: 8px; border: 0; background: #1E6A58; color: #FFFEFC; font-size: 13px; font-weight: 600">Abrir notas</button></div>
+</div>
+</div>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Editor de notas</h2>
+<div style="border: 1px solid #E2DDD5; border-radius: 10px; overflow: hidden">
+<div role="toolbar" aria-label="Formatação" style="display: flex; gap: 2px; padding: 6px; border-bottom: 1px solid #E2DDD5; background: #F7F5F2">
+<button aria-label="Negrito" style="width: 32px; height: 32px; border: 0; border-radius: 6px; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M7 5h6a3.5 3.5 0 0 1 0 7H7zM7 12h7a3.5 3.5 0 0 1 0 7H7z"></path></svg></button>
+<button aria-label="Lista" style="width: 32px; height: 32px; border: 0; border-radius: 6px; background: #E2EEE9; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#17554A" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M9 7h11M9 12h11M9 17h11M4.5 7h.01M4.5 12h.01M4.5 17h.01"></path></svg></button>
+<button aria-label="Caixa de verificação" style="width: 32px; height: 32px; border: 0; border-radius: 6px; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="5" height="5" rx="1"></rect><path d="m4.5 16 1.5 1.5L9 14.5M12 7.5h8.5M12 16h8.5"></path></svg></button>
+</div>
+<div style="padding: 14px 16px; font-size: 16px; line-height: 26px; min-height: 96px"><div>• subir 5% em Jan? Bruno a favor</div><div style="color: #6B655C">Escreve aqui o que for importante. O resto, deixa connosco.</div></div>
+</div>
+<span style="font-size: 12px; color: #6B655C">Barra mínima: negrito, lista, caixa. Atalhos Ctrl+B, “- ” e “[] ”. Sem cores, sem títulos no modo ao vivo.</span>
+</div>
+</section>
+
+<section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Faixas e avisos</h2>
+<div role="status" style="display: flex; gap: 12px; align-items: center; padding: 12px 16px; border-radius: 8px; background: #E8EBF7; color: #3C4A8C"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3C4A8C" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 11v5M12 7.8v.3"></path></svg><span style="flex: 1">Usaste 7 de 10 reuniões este mês.</span><a href="#" style="color: #3C4A8C; font-weight: 600">Ver planos</a></div>
+<div role="status" style="display: flex; gap: 12px; align-items: center; padding: 12px 16px; border-radius: 8px; background: #FCF1D3; color: #7A5200"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 3l18 18M8.5 8.5A5 5 0 0 0 6.5 18H17M10.5 5.6A6 6 0 0 1 18 11a3.5 3.5 0 0 1 2.5 5.5"></path></svg><span style="flex: 1">Sem ligação. Guardamos tudo e enviamos quando voltares.</span></div>
+<div role="alert" style="display: flex; gap: 12px; align-items: center; padding: 12px 16px; border-radius: 8px; background: #F8E6EF; color: #9C1F5A"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9C1F5A" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5v5.5M12 16.2v.3"></path></svg><span style="flex: 1">Não foi possível escrever as notas.</span><button style="height: 28px; padding: 0 10px; border-radius: 6px; border: 1px solid #9C1F5A; background: transparent; color: #9C1F5A; font-size: 13px; font-weight: 600">Tentar outra vez</button></div>
+<div style="display: flex; justify-content: center; padding-top: 8px"><div role="status" style="display: flex; gap: 12px; align-items: center; padding: 10px 12px 10px 16px; border-radius: 8px; background: #1F1D1A; color: #EDE9E3; box-shadow: 0 8px 24px rgba(31,29,26,.18)"><span>Tarefa concluída</span><button style="height: 28px; padding: 0 10px; border-radius: 6px; border: 0; background: transparent; color: #8AD8BF; font-size: 13px; font-weight: 600">Anular</button></div></div>
+<span style="font-size: 12px; color: #6B655C">Toast: fundo text, 4 s, nunca durante a gravação exceto o aviso de consentimento no início.</span>
+</div>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Barra lateral</h2>
+<nav aria-label="Principal" style="width: 248px; background: #EFECE7; border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 2px">
+<a href="#" style="height: 36px; padding: 0 10px; border-radius: 8px; display: flex; align-items: center; gap: 10px; text-decoration: none; color: #1F1D1A; background: #FFFEFC; font-weight: 600; box-shadow: 0 1px 2px rgba(31,29,26,.06)" aria-current="page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E6A58" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"></path></svg>Início</a>
+<a href="#" style="height: 36px; padding: 0 10px; border-radius: 8px; display: flex; align-items: center; gap: 10px; text-decoration: none; color: #1F1D1A"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3"></rect><path d="m8 12 3 3 5-6"></path></svg><span style="flex: 1">Tarefas</span><span style="min-width: 20px; height: 20px; padding: 0 6px; box-sizing: border-box; border-radius: 999px; background: #1E6A58; color: #FFFEFC; font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center">5</span></a>
+<a href="#" style="height: 36px; padding: 0 10px; border-radius: 8px; display: flex; align-items: center; gap: 10px; text-decoration: none; color: #1F1D1A; background: rgba(31,29,26,.05)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m20 20-4.2-4.2"></path></svg>Pesquisar <span style="margin-left: auto; font-size: 12px; color: #57524B">hover</span></a>
+</nav>
+<span style="font-size: 12px; color: #6B655C">Ativo: superfície + ícone em acento. Selo numérico em acento só para Tarefas.</span>
+</div>
+</section>
+
+<section style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Esqueleto e progresso</h2>
+<div style="display: flex; flex-direction: column; gap: 10px" aria-busy="true" aria-label="A carregar">
+<div class="iv-skel" style="height: 14px; width: 60%; border-radius: 4px"></div>
+<div class="iv-skel" style="height: 12px; width: 90%; border-radius: 4px"></div>
+<div class="iv-skel" style="height: 12px; width: 75%; border-radius: 4px"></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding-top: 8px">
+<div style="display: flex; justify-content: space-between; font-size: 13px"><span style="font-weight: 600">Modelo de transcrição</span><span style="font-family: 'Atkinson Hyperlegible Mono', monospace">1,2 / 2,9 GB</span></div>
+<div role="progressbar" aria-valuenow="41" aria-valuemin="0" aria-valuemax="100" aria-label="Transferência do modelo" style="height: 8px; border-radius: 999px; background: #EFECE7; overflow: hidden"><div style="width: 41%; height: 100%; background: #1E6A58; border-radius: 999px"></div></div>
+<div style="display: flex; justify-content: space-between; font-size: 12px; color: #57524B; align-items: center"><span>Faltam cerca de 6 min</span><button style="height: 28px; padding: 0 10px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 12px; font-weight: 600; color: #1F1D1A">Pausar</button></div>
+</div>
+</div>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Estado vazio</h2>
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; padding: 24px 12px; border: 1px dashed #CFC8BD; border-radius: 10px">
+<strong style="font-size: 16px">Nada em aberto.</strong>
+<span style="color: #57524B">Quando alguém disser “eu trato disso”, aparece aqui.</span>
+<button style="height: 36px; padding: 0 14px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 14px; font-weight: 600; color: #1F1D1A">Adicionar tarefa</button>
+</div>
+<span style="font-size: 12px; color: #6B655C">Sem ilustração. Uma frase, uma ação.</span>
+</div>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Tabela</h2>
+<div style="overflow-x: auto; border: 1px solid #E2DDD5; border-radius: 8px">
+<table style="width: 100%; border-collapse: collapse; font-size: 13px">
+<thead><tr style="background: #F7F5F2; text-align: left"><th style="padding: 10px 12px; font-weight: 600; color: #57524B">Nome</th><th style="padding: 10px 12px; font-weight: 600; color: #57524B">Função</th><th style="padding: 10px 12px"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden">Ações</span></th></tr></thead>
+<tbody>
+<tr style="border-top: 1px solid #E2DDD5"><td style="padding: 10px 12px">Bruno Fernandes</td><td style="padding: 10px 12px">Dono</td><td style="padding: 10px 12px; text-align: right; color: #6B655C">—</td></tr>
+<tr style="border-top: 1px solid #E2DDD5"><td style="padding: 10px 12px">Carla Neto</td><td style="padding: 10px 12px">Membro</td><td style="padding: 10px 12px; text-align: right"><button aria-label="Ações para Carla Neto" style="width: 28px; height: 28px; border: 0; background: transparent; border-radius: 6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="#1F1D1A" aria-hidden="true"><circle cx="5.5" cy="12" r="1.4"></circle><circle cx="12" cy="12" r="1.4"></circle><circle cx="18.5" cy="12" r="1.4"></circle></svg></button></td></tr>
+</tbody>
+</table>
+</div>
+<span style="font-size: 12px; color: #6B655C">Linhas 44 px. Em ecrã estreito: rola dentro da caixa.</span>
+</div>
+</section>
+
+<section style="display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start">
+<div style="background: #EFECE7; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 14px; position: relative; min-height: 340px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Diálogo e painel de ajuda</h2>
+<div role="dialog" aria-label="Parar a gravação?" style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; box-shadow: 0 16px 48px rgba(31,29,26,.16); padding: 24px; display: flex; flex-direction: column; gap: 12px; max-width: 360px">
+<strong style="font-size: 16px">Parar já?</strong>
+<span style="color: #57524B">Só gravaste 6 segundos. Se parares, esta reunião não fica guardada.</span>
+<div style="display: flex; gap: 8px; justify-content: flex-end"><button style="height: 36px; padding: 0 14px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 14px; font-weight: 600; color: #1F1D1A">Continuar a gravar</button><button style="height: 36px; padding: 0 14px; border-radius: 8px; border: 0; background: #1F1D1A; color: #FFFEFC; font-size: 14px; font-weight: 600">Parar e descartar</button></div>
+</div>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; box-shadow: 0 8px 24px rgba(31,29,26,.10); padding: 16px; display: flex; flex-direction: column; gap: 8px; max-width: 360px; align-self: flex-end">
+<div style="display: flex; justify-content: space-between; align-items: center"><strong>Põe-me a par</strong><span style="font-size: 12px; color: #57524B; display: flex; align-items: center; gap: 4px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Só tu vês isto</span></div>
+<span style="font-size: 14px; line-height: 22px">Estão a discutir subir os preços 5% em Janeiro. Carla envia a lista até sexta.</span>
+</div>
+</div>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Cartão de plano</h2>
+<div style="border: 1.5px solid #1E6A58; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center"><strong style="font-size: 16px">Pro</strong><span style="font-size: 12px; font-weight: 600; color: #17554A; background: #E2EEE9; border-radius: 6px; padding: 2px 8px">O teu plano</span></div>
+<span><span style="font-size: 28px; font-weight: 600; line-height: 36px">$12</span><span style="color: #57524B"> /mês</span></span>
+<span style="color: #57524B">Reuniões sem limite, tudo no teu computador.</span>
+<button disabled style="height: 36px; border-radius: 8px; border: 1px solid #E2DDD5; background: #F7F5F2; color: #57524B; font-size: 14px; font-weight: 600">Plano atual</button>
+</div>
+</div>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Bloqueado pelo plano</h2>
+<button disabled aria-describedby="lock-hint" style="height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid #E2DDD5; background: #F7F5F2; color: #57524B; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; align-self: flex-start"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Treina-me</button>
+<span id="lock-hint" style="color: #57524B">Recebe conselhos sobre como conduziste a reunião. Incluído no Pro.</span>
+<a href="#" style="font-weight: 600">Ver o que o Pro inclui</a>
+<span style="font-size: 12px; color: #6B655C">Visível mas desativado, nunca escondido. O link abre a folha de upgrade.</span>
+</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3200}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

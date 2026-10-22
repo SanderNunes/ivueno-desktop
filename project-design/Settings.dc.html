@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<title>Ivuenu · Definições</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1E6A58}a:hover{color:#17554A}
+button,input,select{font-family:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #1E6A58;outline-offset:2px}
+</style>
+</helmet>
+<div style="min-height: 100vh; box-sizing: border-box; background: #F7F5F2; color: #1F1D1A; font-family: 'Atkinson Hyperlegible Next', 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 20px; display: flex; flex-wrap: wrap">
+<aside style="flex: 1 1 248px; max-width: 100%; box-sizing: border-box; background: #EFECE7; border-right: 1px solid #E2DDD5; padding: 16px 12px; display: flex; flex-direction: column; gap: 12px">
+<a href="Home.dc.html" style="height: 36px; padding: 0 8px; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: #1F1D1A; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m15 6-6 6 6 6"></path></svg>Voltar</a>
+<h1 style="margin: 0; padding: 0 10px; font-size: 20px; line-height: 28px; font-weight: 700">Definições</h1>
+<nav aria-label="Definições" style="display: flex; flex-direction: column; gap: 2px">
+<a href="#perfil" aria-current="true" style="height: 36px; padding: 0 10px; border-radius: 8px; display: flex; align-items: center; text-decoration: none; color: #1F1D1A; background: #FFFEFC; font-weight: 600; box-shadow: 0 1px 2px rgba(31,29,26,.06)">Perfil</a>
+<a href="#disp" style="height: 36px; padding: 0 10px; border-radius: 8px; display: flex; align-items: center; text-decoration: none; color: #1F1D1A">Dispositivos</a>
+<a href="#grav" style="height: 36px; padding: 0 10px; border-radius: 8px; display: flex; align-items: center; text-decoration: none; color: #1F1D1A">Gravação</a>
+<a href="#cal" style="height: 36px; padding: 0 10px; border-radius: 8px; display: flex; align-items: center; text-decoration: none; color: #1F1D1A">Calendário</a>
+<a href="#rec" style="height: 36px; padding: 0 10px; border-radius: 8px; display: flex; align-items: center; text-decoration: none; color: #1F1D1A">Receitas</a>
+<a href="#priv" style="height: 36px; padding: 0 10px; border-radius: 8px; display: flex; align-items: center; text-decoration: none; color: #1F1D1A">Privacidade</a>
+<a href="#plano" style="height: 36px; padding: 0 10px; border-radius: 8px; display: flex; align-items: center; text-decoration: none; color: #1F1D1A">Plano e uso</a>
+</nav>
+</aside>
+<main style="flex: 999 1 560px; min-width: 0; box-sizing: border-box; padding: 32px clamp(16px, 4vw, 56px) 56px">
+<div style="max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px">
+
+<section id="perfil" aria-labelledby="st-p" style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<h2 id="st-p" style="margin: 0; font-size: 18px; font-weight: 700">Perfil</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="st-name" style="font-size: 13px; font-weight: 600">Nome</label><input id="st-name" value="Ana Silva" style="height: 36px; padding: 0 12px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 14px"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="st-mail" style="font-size: 13px; font-weight: 600">Email</label><input id="st-mail" value="ana.silva@exemplo.ao" disabled style="height: 36px; padding: 0 12px; border-radius: 6px; border: 1px solid #E2DDD5; background: #F7F5F2; color: #57524B; font-size: 14px"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="st-lang" style="font-size: 13px; font-weight: 600">Idioma da aplicação</label><select id="st-lang" style="height: 36px; padding: 0 10px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 14px"><option>Português (Angola)</option><option>English</option></select></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="st-tz" style="font-size: 13px; font-weight: 600">Fuso horário</label><select id="st-tz" style="height: 36px; padding: 0 10px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 14px"><option>Luanda (WAT, UTC+1)</option></select></div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-top: 12px; border-top: 1px solid #E2DDD5"><span style="display: flex; flex-direction: column"><strong>Palavra-passe</strong><span style="font-size: 12px; color: #57524B">Mínimo 10 caracteres</span></span><button style="height: 36px; padding: 0 14px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 14px; font-weight: 600; color: #1F1D1A">Mudar palavra-passe</button></div>
+</section>
+
+<section id="disp" aria-labelledby="st-d" style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<h2 id="st-d" style="margin: 0; font-size: 18px; font-weight: 700">Dispositivos com sessão iniciada</h2>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #E2DDD5"><span style="display: flex; flex-direction: column"><strong>Portátil da Ana · Windows 11</strong><span style="font-size: 12px; color: #57524B">Este dispositivo · grava e guarda as reuniões</span></span><span style="font-size: 12px; color: #3B6E22; font-weight: 600">Ativo agora</span></div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0"><span style="display: flex; flex-direction: column"><strong>Chrome · Android</strong><span style="font-size: 12px; color: #57524B">Último acesso ontem, 18:42 · Luanda</span></span><button style="height: 32px; padding: 0 12px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 13px; font-weight: 600; color: #1F1D1A">Terminar sessão</button></div>
+</section>
+
+<section id="grav" aria-labelledby="st-g" style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<h2 id="st-g" style="margin: 0; font-size: 18px; font-weight: 700">Gravação · predefinições</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="st-mic" style="font-size: 13px; font-weight: 600">Microfone</label><select id="st-mic" style="height: 36px; padding: 0 10px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 14px"><option>Microfone do portátil</option><option>Auricular Bluetooth</option></select></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="st-sl" style="font-size: 13px; font-weight: 600">Idioma falado</label><select id="st-sl" style="height: 36px; padding: 0 10px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 14px"><option>Automático</option><option>Português</option><option>English</option></select></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="st-ns" style="font-size: 13px; font-weight: 600">Estilo das notas</label><select id="st-ns" style="height: 36px; padding: 0 10px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 14px"><option>Escolhe por mim</option><option>Geral</option></select></div>
+</div>
+<label style="display: flex; align-items: center; justify-content: space-between; gap: 16px"><span style="display: flex; flex-direction: column"><span style="font-weight: 600">Gravar o som do computador</span><span style="font-size: 12px; color: #57524B">Necessário para ouvir quem está do outro lado da chamada</span></span><input type="checkbox" role="switch" checked style="position: absolute; opacity: 0; width: 1px; height: 1px"><span aria-hidden="true" style="width: 40px; height: 24px; border-radius: 999px; background: #1E6A58; position: relative; flex: none"><span style="position: absolute; top: 3px; left: 19px; width: 18px; height: 18px; border-radius: 999px; background: #FFFEFC"></span></span></label>
+<label style="display: flex; align-items: center; justify-content: space-between; gap: 16px"><span style="display: flex; flex-direction: column"><span style="font-weight: 600">Guardar a transcrição depois das notas</span><span style="font-size: 12px; color: #57524B">Desligado = só notas: a transcrição é apagada depois</span></span><input type="checkbox" role="switch" checked style="position: absolute; opacity: 0; width: 1px; height: 1px"><span aria-hidden="true" style="width: 40px; height: 24px; border-radius: 999px; background: #1E6A58; position: relative; flex: none"><span style="position: absolute; top: 3px; left: 19px; width: 18px; height: 18px; border-radius: 999px; background: #FFFEFC"></span></span></label>
+<label style="display: flex; align-items: center; justify-content: space-between; gap: 16px"><span style="display: flex; flex-direction: column"><span style="font-weight: 600">Ocultar detalhes sensíveis</span><span style="font-size: 12px; color: #57524B">Cartões e palavras-passe ficam •••• na transcrição e nas notas</span></span><input type="checkbox" role="switch" checked style="position: absolute; opacity: 0; width: 1px; height: 1px"><span aria-hidden="true" style="width: 40px; height: 24px; border-radius: 999px; background: #1E6A58; position: relative; flex: none"><span style="position: absolute; top: 3px; left: 19px; width: 18px; height: 18px; border-radius: 999px; background: #FFFEFC"></span></span></label>
+</section>
+
+<section id="cal" aria-labelledby="st-c" style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<h2 id="st-c" style="margin: 0; font-size: 18px; font-weight: 700">Calendário <span style="font-size: 12px; font-weight: 600; color: #57524B; background: #EFECE7; border-radius: 6px; padding: 2px 8px; vertical-align: middle">no computador</span></h2>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap"><span style="display: flex; flex-direction: column"><strong>Outlook · ana.silva@exemplo.ao</strong><span style="font-size: 12px; color: #57524B">Lido neste computador. Só títulos, horas e participantes.</span></span><button style="height: 32px; padding: 0 12px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 13px; font-weight: 600; color: #1F1D1A">Desligar</button></div>
+</section>
+
+<section id="rec" aria-labelledby="st-r" style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><h2 id="st-r" style="margin: 0; font-size: 18px; font-weight: 700">Receitas</h2><button style="height: 32px; padding: 0 12px; border-radius: 8px; border: 0; background: #1E6A58; color: #FFFEFC; font-size: 13px; font-weight: 600">Nova receita</button></div>
+<p style="margin: 0; color: #57524B">As ajudas de um clique. As da Ivuenu só se leem; as tuas podes editar.</p>
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #E2DDD5"><span style="display: flex; flex-direction: column"><strong>Proposta ao cliente</strong><span style="font-size: 12px; color: #57524B">Tua · “Escreve uma proposta curta com preço, prazos e próximos passos.”</span></span><span style="display: flex; gap: 4px"><button style="height: 32px; padding: 0 10px; border-radius: 6px; border: 0; background: transparent; font-size: 13px; font-weight: 600; color: #1F1D1A">Editar</button><button aria-label="Apagar receita Proposta ao cliente" style="width: 32px; height: 32px; border: 0; background: transparent; border-radius: 6px; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 7h15M10 4h4M6.5 7l1 12.5A1.5 1.5 0 0 0 9 21h6a1.5 1.5 0 0 0 1.5-1.5l1-12.5"></path></svg></button></span></div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #E2DDD5"><span style="display: flex; flex-direction: column"><strong>Pontos cegos</strong><span style="font-size: 12px; color: #57524B">Ivuenu · depois da reunião</span></span><span style="font-size: 12px; color: #57524B; display: inline-flex; gap: 4px; align-items: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Só leitura</span></div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0"><span style="display: flex; flex-direction: column"><strong>Põe-me a par</strong><span style="font-size: 12px; color: #57524B">Ivuenu · ao vivo</span></span><span style="font-size: 12px; color: #57524B; display: inline-flex; gap: 4px; align-items: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Só leitura</span></div>
+</div>
+</section>
+
+<section id="priv" aria-labelledby="st-v" style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<h2 id="st-v" style="margin: 0; font-size: 18px; font-weight: 700">Privacidade</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 12px">
+<div style="padding: 14px; border-radius: 8px; background: #F7F5F2; display: flex; flex-direction: column; gap: 4px"><strong>Áudio</strong><span style="font-size: 13px; color: #57524B">Fica no teu computador. Apagado depois da transcrição.</span></div>
+<div style="padding: 14px; border-radius: 8px; background: #F7F5F2; display: flex; flex-direction: column; gap: 4px"><strong>Transcrições e notas</strong><span style="font-size: 13px; color: #57524B">Ficam no teu computador. Cópia de segurança encriptada na conta.</span></div>
+<div style="padding: 14px; border-radius: 8px; background: #F7F5F2; display: flex; flex-direction: column; gap: 4px"><strong>Nuvem</strong><span style="font-size: 13px; color: #57524B">Desligada. Nada é enviado para processamento.</span></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 16px; border: 1px solid #E8C3D5; border-radius: 10px">
+<strong style="color: #9C1F5A">Apagar a minha conta e dados</strong>
+<span style="color: #1F1D1A">Apaga a conta, todas as reuniões, notas e transcrições, neste computador e na conta. Não dá para desfazer.</span>
+<label for="st-del" style="font-size: 13px; font-weight: 600">Escreve <span style="font-family: 'Atkinson Hyperlegible Mono', monospace; background: #EFECE7; padding: 0 4px; border-radius: 4px">APAGAR</span> para confirmar</label>
+<div style="display: flex; gap: 8px; flex-wrap: wrap"><input id="st-del" value="{{typed}}" onChange="{{onType}}" autocomplete="off" style="flex: 1 1 200px; height: 36px; padding: 0 12px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 14px; font-family: 'Atkinson Hyperlegible Mono', monospace"><button disabled="{{locked}}" style="{{delStyle}}">Apagar a minha conta e dados</button></div>
+</div>
+</section>
+
+<section id="plano" aria-labelledby="st-pl" style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><h2 id="st-pl" style="margin: 0; font-size: 18px; font-weight: 700">Plano e uso</h2><a href="Pricing.dc.html" style="font-weight: 600">Ver planos</a></div>
+<div style="display: flex; justify-content: space-between; font-size: 13px"><strong>Gratuito</strong><span><span style="font-family: 'Atkinson Hyperlegible Mono', monospace">7 / 10</span> reuniões em Outubro</span></div>
+<div role="progressbar" aria-valuenow="7" aria-valuemin="0" aria-valuemax="10" aria-label="Reuniões usadas este mês" style="height: 8px; border-radius: 999px; background: #EFECE7; overflow: hidden"><div style="width: 70%; height: 100%; background: #1E6A58"></div></div>
+<span style="font-size: 12px; color: #57524B">Volta a zero a 01/11/2026.</span>
+</section>
+
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2100}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { typed: '' }; }
+  renderVals() {
+    const ok = this.state.typed.trim() === 'APAGAR';
+    return {
+      typed: this.state.typed, onType: (e) => this.setState({ typed: e.target.value }), locked: !ok,
+      delStyle: ok ? 'height: 36px; padding: 0 14px; border-radius: 8px; border: 0; background: #9C1F5A; color: #FFFEFC; font-size: 14px; font-weight: 600' : 'height: 36px; padding: 0 14px; border-radius: 8px; border: 0; background: #E2DDD5; color: #57524B; font-size: 14px; font-weight: 600'
+    };
+  }
+}
+</script>
+</body>
+</html>

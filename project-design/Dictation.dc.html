@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<title>Ivuenu · Ditado</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+button,input{font-family:inherit}
+button:focus-visible{outline:2px solid #1E6A58;outline-offset:2px}
+.iv-bar{transition:height 90ms linear}
+@keyframes ivCaret{0%,100%{opacity:1}50%{opacity:0}}
+.iv-caret{animation:ivCaret 1s steps(1) infinite}
+@keyframes ivPulse{0%,100%{opacity:1}50%{opacity:.4}}
+.iv-rec{animation:ivPulse 2s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.iv-bar{transition:none}.iv-caret,.iv-rec{animation:none}}
+kbd{font-family:'Atkinson Hyperlegible Mono',monospace;font-size:12px;border:1px solid #CFC8BD;border-bottom-width:2px;border-radius:4px;padding:0 5px;background:#FFFEFC;color:#1F1D1A}
+</style>
+</helmet>
+<div style="width: 1440px; min-height: 1500px; box-sizing: border-box; background: #F7F5F2; color: #1F1D1A; font-family: 'Atkinson Hyperlegible Next', 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 20px; padding: 64px 80px; display: flex; flex-direction: column; gap: 40px">
+
+<header style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; border-bottom: 1px solid #E2DDD5; padding-bottom: 24px">
+<div style="display: flex; flex-direction: column; gap: 6px"><h1 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 600">Ditado</h1><p style="margin: 0; color: #57524B; max-width: 680px">Falar em vez de escrever. Em qualquer aplicação do computador, através da ilha, ou dentro das tuas notas. O áudio do ditado não é guardado e não entra na transcrição da reunião.</p></div>
+<span style="font-size: 13px; color: #57524B">Atalho: mantém <kbd>Ctrl</kbd> + <kbd>Espaço</kbd> premido e fala</span>
+</header>
+
+<section style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px"><h2 style="margin: 0; font-size: 16px; font-weight: 700">1 · Em qualquer aplicação</h2><button onClick="{{run}}" style="height: 36px; padding: 0 14px; border-radius: 8px; border: 0; background: #1E6A58; color: #FFFEFC; font-size: 14px; font-weight: 600">{{runLabel}}</button></div>
+<div style="background: #2B3236; border-radius: 12px; height: 520px; position: relative; overflow: hidden">
+
+<div aria-hidden="true" style="position: absolute; left: 50%; top: 96px; transform: translateX(-50%); width: 820px; height: 380px; background: #FFFEFC; border-radius: 10px; box-shadow: 0 16px 48px rgba(0,0,0,.35); display: flex; flex-direction: column; overflow: hidden">
+<div style="height: 40px; background: #EFECE7; display: flex; align-items: center; padding: 0 16px; font-size: 13px; font-weight: 600; color: #57524B">Nova mensagem · cliente de email</div>
+<div style="padding: 10px 20px; border-bottom: 1px solid #E2DDD5; font-size: 14px; color: #57524B">Para: domingos.kiala@exemplo.ao</div>
+<div style="padding: 10px 20px; border-bottom: 1px solid #E2DDD5; font-size: 14px; color: #57524B">Assunto: Nova lista de preços</div>
+<div style="padding: 16px 20px; font-size: 16px; line-height: 26px; color: #1F1D1A">{{inserted}}<span class="iv-caret" style="display: inline-block; width: 2px; height: 20px; background: #1F1D1A; vertical-align: -4px; margin-left: 1px"></span></div>
+</div>
+
+<div style="position: absolute; left: 50%; top: 10px; transform: translateX(-50%); z-index: 2">
+<sc-if value="{{idle}}" hint-placeholder-val="{{ false }}">
+<div style="height: 36px; padding: 0 14px; border-radius: 999px; background: #151412; border: 1px solid rgba(237,233,227,.10); box-shadow: 0 8px 24px rgba(0,0,0,.45); display: flex; align-items: center; gap: 8px; color: #B9B2A8; font-size: 12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B9B2A8" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"></path></svg>Ctrl + Espaço para ditar</div>
+</sc-if>
+<sc-if value="{{active}}" hint-placeholder-val="{{ true }}">
+<div role="status" aria-live="polite" style="width: 560px; box-sizing: border-box; border-radius: 20px; background: #151412; border: 1px solid rgba(237,233,227,.10); box-shadow: 0 16px 48px rgba(0,0,0,.5); color: #EDE9E3; padding: 12px 16px 14px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; gap: 10px">
+<span style="width: 26px; height: 26px; border-radius: 999px; background: #183229; display: flex; align-items: center; justify-content: center; flex: none"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#63C3A6" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"></path></svg></span>
+<span style="font-weight: 600; color: #8AD8BF">{{phaseLabel}}</span>
+<span aria-hidden="true" style="display: flex; align-items: center; gap: 2px; height: 22px; flex: 1"><sc-for list="{{bars}}" as="b" hint-placeholder-count="36"><span class="iv-bar" style="width: 3px; border-radius: 2px; flex: none; background: #63C3A6; height: {{b.h}}"></span></sc-for></span>
+<span style="font-size: 12px; color: #B9B2A8; white-space: nowrap">Português · auto</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 23px; min-height: 46px"><span>{{finalText}}</span><span style="color: #A0998F">{{partialText}}</span></p>
+<div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #A0998F; border-top: 1px solid #312E2A; padding-top: 8px"><span>Larga para inserir em “Nova mensagem”</span><span>Esc cancela</span></div>
+</div>
+</sc-if>
+<sc-if value="{{done}}" hint-placeholder-val="{{ false }}">
+<div role="status" style="height: 36px; padding: 0 14px; border-radius: 999px; background: #151412; border: 1px solid rgba(237,233,227,.10); box-shadow: 0 8px 24px rgba(0,0,0,.45); display: flex; align-items: center; gap: 8px; color: #EDE9E3; font-size: 13px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#63C3A6" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Inserido · 21 palavras<button onClick="{{undo}}" style="height: 26px; padding: 0 8px; border: 0; background: transparent; color: #8AD8BF; font-size: 13px; font-weight: 600">Anular</button></div>
+</sc-if>
+</div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Estados da ilha em ditado</h2>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="height: 130px; border-radius: 10px; background: #2B3236; display: flex; justify-content: center; align-items: flex-start; padding-top: 14px; box-sizing: border-box">
+<div style="height: 36px; padding: 0 14px 0 12px; border-radius: 999px; background: #151412; border: 1px solid rgba(237,233,227,.10); display: flex; align-items: center; gap: 10px; color: #EDE9E3">
+<span class="iv-rec" style="width: 10px; height: 10px; border-radius: 999px; background: #FF5B4F"></span><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 13px">00:12:40</span>
+<span style="width: 1px; height: 18px; background: #45413B"></span>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#63C3A6" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"></path></svg><span style="font-size: 12px; font-weight: 600; color: #8AD8BF">A ditar</span>
+</div>
+</div>
+<strong>Ditar durante uma reunião</strong>
+<span style="font-size: 13px; color: #57524B">A gravação continua (ponto vermelho), mas o que ditas fica fora da transcrição e não é ouvido como fala tua.</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="height: 130px; border-radius: 10px; background: #2B3236; display: flex; justify-content: center; align-items: flex-start; padding-top: 14px; box-sizing: border-box">
+<div style="width: 320px; border-radius: 16px; background: #151412; border: 1px solid rgba(237,233,227,.10); padding: 10px 14px; display: flex; flex-direction: column; gap: 8px; color: #EDE9E3; box-sizing: border-box">
+<span style="display: flex; gap: 8px; align-items: center; font-size: 13px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#63C3A6" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Copiado · nenhum campo de texto ativo</span>
+<span style="font-size: 12px; color: #A0998F">Cola com Ctrl + V onde quiseres.</span>
+</div>
+</div>
+<strong>Sem sítio para escrever</strong>
+<span style="font-size: 13px; color: #57524B">Se o foco não está num campo de texto, o texto vai para a área de transferência. Nunca se perde.</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="height: 130px; border-radius: 10px; background: #2B3236; display: flex; justify-content: center; align-items: flex-start; padding-top: 14px; box-sizing: border-box">
+<div style="height: 36px; padding: 0 14px; border-radius: 999px; background: #151412; border: 1px solid rgba(237,233,227,.10); display: flex; align-items: center; gap: 8px; color: #F0C25A; font-size: 13px; font-weight: 600"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0C25A" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"></path></svg>Não ouvimos nada · verifica o microfone</div>
+</div>
+<strong>Sem som</strong>
+<span style="font-size: 13px; color: #57524B">Aparece depois de 3 s em silêncio com o atalho premido. Clicar abre a escolha de microfone.</span>
+</div>
+</div>
+</section>
+
+<section style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 24px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">2 · Nas tuas notas</h2>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; overflow: hidden">
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 20px 8px"><strong style="font-size: 18px">As tuas notas</strong>
+<div role="toolbar" aria-label="Formatação" style="display: flex; gap: 2px; align-items: center">
+<button aria-label="Negrito" style="width: 32px; height: 32px; border: 0; border-radius: 6px; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M7 5h6a3.5 3.5 0 0 1 0 7H7zM7 12h7a3.5 3.5 0 0 1 0 7H7z"></path></svg></button>
+<button aria-label="Lista" style="width: 32px; height: 32px; border: 0; border-radius: 6px; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M9 7h11M9 12h11M9 17h11M4.5 7h.01M4.5 12h.01M4.5 17h.01"></path></svg></button>
+<span style="width: 1px; height: 20px; background: #E2DDD5; margin: 0 4px"></span>
+<button aria-pressed="true" title="Ditar · Ctrl + D" style="height: 32px; padding: 0 10px; border-radius: 999px; border: 1px solid #1E6A58; background: #E2EEE9; display: inline-flex; align-items: center; gap: 6px; color: #17554A; font-size: 13px; font-weight: 600"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#17554A" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"></path></svg><span aria-hidden="true" style="display: flex; align-items: center; gap: 2px; height: 14px"><span style="width: 2px; height: 6px; background: #1E6A58; border-radius: 1px"></span><span style="width: 2px; height: 12px; background: #1E6A58; border-radius: 1px"></span><span style="width: 2px; height: 8px; background: #1E6A58; border-radius: 1px"></span><span style="width: 2px; height: 14px; background: #1E6A58; border-radius: 1px"></span><span style="width: 2px; height: 5px; background: #1E6A58; border-radius: 1px"></span></span>A ditar</button>
+</div></div>
+<div style="padding: 4px 20px 20px; font-size: 17px; line-height: 30px">
+<div>Preços Q4</div>
+<div>• subir 5% em Jan? Bruno a favor</div>
+<div>• avisar clientes 1 mês antes</div>
+<div>• oferta de retenção: <span>perguntar ao Domingos quanto custa</span><span style="color: #6B655C; text-decoration: underline dotted #A39C91; text-underline-offset: 4px"> por cliente no pré-pago</span><span class="iv-caret" style="display: inline-block; width: 2px; height: 20px; background: #1F1D1A; vertical-align: -4px; margin-left: 1px"></span></div>
+</div>
+</div>
+<span style="font-size: 13px; color: #57524B">O texto entra onde está o cursor. Enquanto ainda está a ser reconhecido fica em cinzento com sublinhado pontilhado; fixa-se quando fazes uma pausa. É texto teu: a Ivuenu nunca o reescreve.</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Definições › Ditado</h2>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span style="display: flex; flex-direction: column"><strong>Atalho</strong><span style="font-size: 12px; color: #57524B">Mantém premido para falar; larga para inserir</span></span><button style="height: 32px; padding: 0 10px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 13px; color: #1F1D1A">Ctrl + Espaço</button></div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span style="display: flex; flex-direction: column"><strong>Modo</strong><span style="font-size: 12px; color: #57524B">Premir duas vezes para ditar sem segurar</span></span>
+<div role="radiogroup" aria-label="Modo de ditado" style="display: flex; padding: 3px; background: #EFECE7; border-radius: 8px; gap: 2px"><button role="radio" aria-checked="true" style="height: 30px; padding: 0 10px; border-radius: 6px; border: 0; background: #FFFEFC; box-shadow: 0 1px 2px rgba(31,29,26,.10); font-size: 13px; font-weight: 600; color: #1F1D1A">Segurar</button><button role="radio" aria-checked="false" style="height: 30px; padding: 0 10px; border-radius: 6px; border: 0; background: transparent; font-size: 13px; color: #57524B">Alternar</button></div></div>
+<label style="display: flex; align-items: center; justify-content: space-between; gap: 16px"><span style="display: flex; flex-direction: column"><span style="font-weight: 600">Pontuação automática</span><span style="font-size: 12px; color: #57524B">Ou diz “vírgula”, “ponto”, “nova linha”</span></span><input type="checkbox" role="switch" checked style="position: absolute; opacity: 0; width: 1px; height: 1px"><span aria-hidden="true" style="width: 40px; height: 24px; border-radius: 999px; background: #1E6A58; position: relative; flex: none"><span style="position: absolute; top: 3px; left: 19px; width: 18px; height: 18px; border-radius: 999px; background: #FFFEFC"></span></span></label>
+<label style="display: flex; align-items: center; justify-content: space-between; gap: 16px"><span style="display: flex; flex-direction: column"><span style="font-weight: 600">Limpar hesitações</span><span style="font-size: 12px; color: #57524B">Tira “hã”, “tipo”, repetições</span></span><input type="checkbox" role="switch" checked style="position: absolute; opacity: 0; width: 1px; height: 1px"><span aria-hidden="true" style="width: 40px; height: 24px; border-radius: 999px; background: #1E6A58; position: relative; flex: none"><span style="position: absolute; top: 3px; left: 19px; width: 18px; height: 18px; border-radius: 999px; background: #FFFEFC"></span></span></label>
+<div style="display: flex; gap: 8px; align-items: center; padding: 10px 12px; border-radius: 8px; background: #F7F5F2; font-size: 13px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6.5A1.5 1.5 0 0 1 6.5 5h11A1.5 1.5 0 0 1 19 6.5V15H5z"></path><path d="M3 18.5h18"></path></svg>Fica no teu computador. O áudio do ditado é apagado logo a seguir.</div>
+</div>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.words = 'Olá Domingos, envio em anexo a nova lista de preços. Os valores entram em vigor a partir de Janeiro e avisamos os clientes em Dezembro.'.split(' ');
+    this.state = { phase: 'listening', n: 9, bars: Array.from({ length: 36 }, (_, i) => 0.2 + 0.6 * Math.abs(Math.sin(i * 0.7))), base: '' };
+  }
+  componentWillUnmount() { this.stop(); }
+  stop() { clearInterval(this.w); clearInterval(this.b); clearTimeout(this.t); }
+  start() {
+    this.stop();
+    this.setState({ phase: 'listening', n: 0 });
+    let reduce = false;
+    try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    if (!reduce) this.b = setInterval(() => this.setState((s) => ({ bars: s.bars.slice(1).concat([s.phase === 'listening' ? 0.15 + Math.random() * 0.85 : 0.05]) })), 100);
+    this.w = setInterval(() => {
+      const n = this.state.n + 1;
+      if (n > this.words.length) {
+        clearInterval(this.w);
+        this.setState({ phase: 'inserting' });
+        this.t = setTimeout(() => { clearInterval(this.b); this.setState({ phase: 'done', base: this.words.join(' ') }); }, 700);
+      } else this.setState({ n });
+    }, 280);
+  }
+  renderVals() {
+    const s = this.state;
+    const said = this.words.slice(0, s.n);
+    const fin = said.slice(0, Math.max(0, said.length - 3)).join(' ');
+    const part = said.slice(Math.max(0, said.length - 3)).join(' ');
+    return {
+      idle: s.phase === 'idle', active: s.phase === 'listening' || s.phase === 'inserting', done: s.phase === 'done',
+      phaseLabel: s.phase === 'inserting' ? 'A inserir…' : 'A ouvir',
+      bars: s.bars.map((v) => ({ h: Math.round(3 + v * 19) + 'px' })),
+      finalText: fin ? fin + ' ' : '', partialText: s.phase === 'inserting' ? '' : part,
+      inserted: s.base,
+      run: () => this.start(), runLabel: s.phase === 'listening' ? 'A ditar…' : 'Experimentar ditado',
+      undo: () => { this.stop(); this.setState({ phase: 'idle', base: '' }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

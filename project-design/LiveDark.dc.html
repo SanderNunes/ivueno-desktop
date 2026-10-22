@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<title>Ivuenu · Reunião ao vivo (escuro)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#151412}
+a{color:#63C3A6}a:hover{color:#7ED1B7}
+button,input,select,textarea{font-family:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #63C3A6;outline-offset:2px}
+textarea:focus{outline:none}
+textarea::placeholder{color:#A0998F}
+.iv-chip:hover{background:#24221F}
+@keyframes ivPulse{0%,100%{opacity:1}50%{opacity:.4}}
+.iv-rec{animation:ivPulse 2s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.iv-rec{animation:none}}
+</style>
+</helmet>
+<div style="height: 100vh; min-height: 640px; box-sizing: border-box; background: #151412; color: #EDE9E3; font-family: 'Atkinson Hyperlegible Next', 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 20px; display: flex; flex-direction: column">
+
+<header style="flex: none; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; padding: 12px 20px; background: #1C1B19; border-bottom: 1px solid #312E2A">
+<div role="status" aria-label="A gravar, 12 minutos e 40 segundos" style="display: inline-flex; align-items: center; gap: 10px; height: 36px; padding: 0 16px 0 14px; background: #3A1A17; border-radius: 999px; flex: none"><span class="iv-rec" style="width: 10px; height: 10px; border-radius: 999px; background: #FF5B4F"></span><span style="font-weight: 600; color: #FF8A80">A gravar</span><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-weight: 500; font-size: 15px">00:12:40</span></div>
+<label for="ld-title" style="position: absolute; width: 1px; height: 1px; overflow: hidden">Título da reunião</label>
+<input id="ld-title" value="Revisão de preços Q4" style="flex: 1 1 200px; min-width: 0; height: 36px; padding: 0 8px; border-radius: 6px; border: 1px solid transparent; background: transparent; color: #EDE9E3; font-size: 17px; font-weight: 700">
+<span style="display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border-radius: 6px; background: #1E2A16; color: #9BCF7A; font-size: 13px; font-weight: 600"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9BCF7A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6z"></path><path d="m9 12 2.2 2.2L15.5 10"></path></svg>Participantes avisados</span>
+<div style="display: flex; align-items: center; gap: 14px; padding: 0 4px">
+<span style="display: flex; align-items: center; gap: 6px" role="img" aria-label="Nível do microfone: bom"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B9B2A8" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"></path></svg><span style="display: flex; gap: 2px; align-items: flex-end; height: 16px"><span style="width: 3px; height: 5px; background: #63C3A6; border-radius: 1px"></span><span style="width: 3px; height: 8px; background: #63C3A6; border-radius: 1px"></span><span style="width: 3px; height: 11px; background: #63C3A6; border-radius: 1px"></span><span style="width: 3px; height: 14px; background: #45413B; border-radius: 1px"></span><span style="width: 3px; height: 16px; background: #45413B; border-radius: 1px"></span></span></span>
+<span style="display: flex; align-items: center; gap: 6px" role="img" aria-label="Nível do som do computador: baixo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B9B2A8" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg><span style="display: flex; gap: 2px; align-items: flex-end; height: 16px"><span style="width: 3px; height: 5px; background: #63C3A6; border-radius: 1px"></span><span style="width: 3px; height: 8px; background: #45413B; border-radius: 1px"></span><span style="width: 3px; height: 11px; background: #45413B; border-radius: 1px"></span><span style="width: 3px; height: 14px; background: #45413B; border-radius: 1px"></span><span style="width: 3px; height: 16px; background: #45413B; border-radius: 1px"></span></span></span>
+</div>
+<span role="status" style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 8px; border-radius: 6px; background: #33280F; color: #F0C25A; font-size: 12px; font-weight: 600"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0C25A" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4.5v4h-4"></path></svg>A religar… a gravação continua</span>
+<button aria-label="Abrir o mini gravador" title="Mini gravador" style="width: 36px; height: 36px; border-radius: 8px; border: 1px solid #45413B; background: #1C1B19; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EDE9E3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><rect x="12" y="12" width="6" height="4" rx="1"></rect></svg></button>
+<a href="Detail.dc.html" style="height: 36px; padding: 0 16px; border-radius: 8px; background: #EDE9E3; color: #151412; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3" fill="#151412"></rect></svg>Parar</a>
+</header>
+
+<div style="flex: 1; min-height: 0; display: flex; flex-wrap: wrap; overflow: auto">
+
+<section aria-labelledby="ld-tr" style="flex: 1 1 420px; min-width: 0; min-height: 360px; display: flex; flex-direction: column; position: relative; border-right: 1px solid #312E2A">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 24px 10px">
+<h2 id="ld-tr" style="margin: 0; font-size: 14px; font-weight: 700">Transcrição ao vivo</h2>
+<div style="display: flex; gap: 8px; align-items: center"><span style="font-size: 12px; color: #B9B2A8">Português · English</span><button aria-pressed="{{paused}}" onClick="{{togglePause}}" style="height: 28px; padding: 0 10px; border-radius: 6px; border: 1px solid #45413B; background: #1C1B19; font-size: 12px; font-weight: 600; color: #EDE9E3">{{pauseLabel}}</button></div>
+</div>
+<div role="log" aria-live="{{liveMode}}" aria-label="Transcrição" style="flex: 1; min-height: 0; overflow: auto; padding: 4px 24px 40px; display: flex; flex-direction: column; gap: 18px">
+<sc-for list="{{lines}}" as="l" hint-placeholder-count="6">
+<div style="display: grid; grid-template-columns: 4px minmax(0, 1fr); gap: 12px; opacity: {{l.op}}">
+<span style="background: {{l.color}}; border-radius: 2px"></span>
+<div style="display: flex; flex-direction: column; gap: 2px">
+<div style="display: flex; gap: 10px; align-items: baseline"><strong style="font-size: 14px">{{l.who}}</strong><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 12px; color: #A0998F">{{l.t}}</span></div>
+<p style="margin: 0; font-size: 16px; line-height: 26px; color: {{l.textColor}}">{{l.text}}</p>
+<sc-if value="{{l.tr}}" hint-placeholder-val="{{ false }}"><p style="margin: 0; font-size: 14px; line-height: 22px; color: #B9B2A8">{{l.tr}}</p></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section aria-labelledby="ld-notes" style="flex: 1.3 1 480px; min-width: 0; min-height: 360px; display: flex; flex-direction: column; background: #1C1B19">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 32px 10px; flex-wrap: wrap">
+<h2 id="ld-notes" style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 700">As tuas notas</h2>
+<div style="display: flex; gap: 2px" role="toolbar" aria-label="Formatação">
+<button aria-label="Negrito" style="width: 32px; height: 32px; border: 0; border-radius: 6px; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EDE9E3" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M7 5h6a3.5 3.5 0 0 1 0 7H7zM7 12h7a3.5 3.5 0 0 1 0 7H7z"></path></svg></button>
+<button aria-label="Lista" style="width: 32px; height: 32px; border: 0; border-radius: 6px; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EDE9E3" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M9 7h11M9 12h11M9 17h11M4.5 7h.01M4.5 12h.01M4.5 17h.01"></path></svg></button>
+<button aria-label="Caixa de verificação" style="width: 32px; height: 32px; border: 0; border-radius: 6px; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EDE9E3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="5" height="5" rx="1"></rect><path d="m4.5 16 1.5 1.5L9 14.5M12 7.5h8.5M12 16h8.5"></path></svg></button>
+</div>
+</div>
+<label for="ld-notes-area" style="position: absolute; width: 1px; height: 1px; overflow: hidden">As tuas notas</label>
+<textarea id="ld-notes-area" value="{{notes}}" onChange="{{editNotes}}" placeholder="Escreve aqui o que for importante. O resto, deixa connosco." style="flex: 1; min-height: 240px; resize: none; border: 0; padding: 4px 32px 24px; font-size: 17px; line-height: 30px; color: #EDE9E3; background: transparent; max-width: 760px; box-sizing: border-box"></textarea>
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 32px; font-size: 12px; color: #B9B2A8; border-top: 1px solid #312E2A; flex-wrap: wrap">
+<span style="display: inline-flex; align-items: center; gap: 6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B9B2A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6.5A1.5 1.5 0 0 1 6.5 5h11A1.5 1.5 0 0 1 19 6.5V15H5z"></path><path d="M3 18.5h18"></path></svg>Fica no teu computador.</span>
+<span>A guardar neste computador. Sincroniza quando a ligação voltar.</span>
+</div>
+</section>
+</div>
+
+<footer style="flex: none; position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding: 12px 20px; background: #1C1B19; border-top: 1px solid #312E2A">
+<div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap" aria-label="Oradores">
+<span style="font-size: 12px; font-weight: 600; color: #B9B2A8; margin-right: 4px">Oradores</span>
+<sc-for list="{{speakers}}" as="s" hint-placeholder-count="5">
+<button title="Clica para mudar o nome" style="height: 30px; padding: 0 10px 0 3px; border-radius: 999px; border: 1px solid #312E2A; background: #1C1B19; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #EDE9E3"><span style="width: 24px; height: 24px; border-radius: 999px; background: {{s.color}}; color: #151412; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{s.ini}}</span>{{s.name}}</button>
+</sc-for>
+<span style="height: 30px; padding: 0 4px 0 3px; border-radius: 999px; border: 1.5px solid #63C3A6; background: #1C1B19; display: inline-flex; align-items: center; gap: 6px"><span style="width: 24px; height: 24px; border-radius: 999px; background: #C79AF0; color: #151412; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center">O6</span><label for="ld-rename" style="position: absolute; width: 1px; height: 1px; overflow: hidden">Nome do orador 6</label><input id="ld-rename" value="Orador 6" style="width: 84px; border: 0; outline: 0; font-size: 13px; background: transparent; color: #EDE9E3"><button aria-label="Guardar nome" style="width: 24px; height: 24px; border-radius: 999px; border: 0; background: #63C3A6; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D1F1A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></button></span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap" role="group" aria-label="Ajudas ao vivo">
+<sc-for list="{{helpers}}" as="h" hint-placeholder-count="4">
+<button class="iv-chip" aria-pressed="{{h.on}}" onClick="{{h.pick}}" style="{{h.style}}">{{h.label}}</button>
+</sc-for>
+</div>
+<sc-if value="{{panel}}" hint-placeholder-val="{{ true }}">
+<div role="dialog" aria-label="{{panel.label}}" style="position: absolute; right: 20px; bottom: calc(100% + 8px); width: min(380px, calc(100% - 40px)); box-sizing: border-box; background: #24221F; border: 1px solid #45413B; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,.45); padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><strong style="font-size: 15px">{{panel.label}}</strong><button aria-label="Fechar" onClick="{{closePanel}}" style="width: 28px; height: 28px; border: 0; background: transparent; border-radius: 6px; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EDE9E3" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div>
+<p style="margin: 0; font-size: 15px; line-height: 24px; white-space: pre-line">{{panel.text}}</p>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 8px; border-top: 1px solid #45413B">
+<span style="font-size: 12px; color: #B9B2A8; display: inline-flex; align-items: center; gap: 6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B9B2A8" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Só tu vês isto · escrito pela Ivuenu</span>
+<button style="height: 30px; padding: 0 10px; border-radius: 6px; border: 1px solid #45413B; background: #1C1B19; font-size: 13px; font-weight: 600; color: #EDE9E3; display: inline-flex; align-items: center; gap: 6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EDE9E3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8.5" y="8.5" width="11" height="11" rx="2"></rect><path d="M15.5 8.5V6A1.5 1.5 0 0 0 14 4.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"></path></svg>Copiar</button>
+</div>
+</div>
+</sc-if>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":980}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      helper: 'catch', paused: false,
+      notes: 'Preços Q4\n• subir 5% em Jan? Bruno a favor\n• avisar clientes 1 mês antes\n• cancelamentos +2% em Set (pré-pago)\n☐ Carla → nova lista de preços (sexta)\n• oferta de retenção?? perguntar ao Domingos\n'
+    };
+  }
+  renderVals() {
+    const s = this.state;
+    const C = { ana: '#9AA2F5', bruno: '#E3A75A', carla: '#5FCDB9', dom: '#C79AF0', esp: '#73B9E6' };
+    const raw = [
+      [C.dom, 'Domingos Kiala', '00:10:52', 'Antes de mexermos nos preços, quero ver os números de cancelamento do último trimestre.'],
+      [C.esp, 'Esperança Pinto', '00:11:08', 'Tenho isso. Os cancelamentos subiram dois por cento em Setembro, sobretudo no pré-pago.'],
+      [C.bruno, 'Bruno Fernandes', '00:11:40', 'Acho que devíamos subir os preços em cinco por cento a partir de Janeiro.'],
+      [C.dom, 'Domingos Kiala', '00:12:02', 'If we go to five percent, we need a retention offer ready.', 'Se formos para cinco por cento, precisamos de uma oferta de retenção pronta.'],
+      [C.ana, 'Ana Silva', '00:12:15', 'Concordo, mas temos de avisar os clientes com um mês de antecedência.'],
+      [C.carla, 'Carla Neto', '00:12:31', 'Eu envio a nova lista de preços até sexta-feira.'],
+      [C.bruno, 'Bruno Fernandes', 'a falar…', 'Perfeito. E alguém tem de avisar o suporte', null, true]
+    ];
+    const lines = raw.map(([color, who, t, text, tr, partial]) => ({ color, who, t, text, tr: tr || '', op: partial ? '0.75' : '1', textColor: partial ? '#B9B2A8' : '#EDE9E3' }));
+    const speakers = [['AS', 'Ana Silva (tu)', C.ana], ['BF', 'Bruno Fernandes', C.bruno], ['CN', 'Carla Neto', C.carla], ['DK', 'Domingos Kiala', C.dom], ['EP', 'Esperança Pinto', C.esp]].map(([ini, name, color]) => ({ ini, name, color }));
+    const H = {
+      say: ['Sugere o que dizer', 'Pergunta ao Domingos que oferta de retenção tem em mente e quanto custa por cliente, antes de fecharem os 5%.'],
+      catch: ['Põe-me a par', '• Bruno propõe subir os preços 5% a partir de Janeiro.\n• Domingos quer uma oferta de retenção pronta antes.\n• Carla envia a nova lista de preços até sexta-feira.'],
+      explain: ['Explica isso', '“Retention offer” é uma oferta de retenção: um desconto ou benefício para quem ameaça cancelar.'],
+      ask: ['Perguntas a fazer', '• Quem avisa o suporte?\n• O aumento também se aplica ao pós-pago?\n• Até quando fica pronta a oferta de retenção?']
+    };
+    const on = 'height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid #63C3A6; background: #183229; font-size: 13px; font-weight: 600; color: #8AD8BF';
+    const off = 'height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid #45413B; background: #1C1B19; font-size: 13px; font-weight: 600; color: #EDE9E3';
+    const helpers = Object.keys(H).map((k) => ({ label: H[k][0], on: s.helper === k ? 'true' : 'false', style: s.helper === k ? on : off, pick: () => this.setState({ helper: s.helper === k ? null : k }) }));
+    return {
+      lines, speakers, helpers,
+      panel: s.helper ? { label: H[s.helper][0], text: H[s.helper][1] } : null,
+      closePanel: () => this.setState({ helper: null }),
+      paused: s.paused ? 'true' : 'false', togglePause: () => this.setState({ paused: !s.paused }),
+      pauseLabel: s.paused ? 'Retomar leitura' : 'Pausar leitura', liveMode: s.paused ? 'off' : 'polite',
+      notes: s.notes, editNotes: (e) => this.setState({ notes: e.target.value })
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc"><title id="title">Ivuenu imagotipo</title><desc id="desc">Ivuenu symbol and wordmark.</desc><defs>
+ <linearGradient id="gBack" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#11D3B2"/><stop offset="100%" stop-color="#078A7B"/></linearGradient>
+ <linearGradient id="gFront" x1="15%" y1="0%" x2="85%" y2="100%"><stop offset="0%" stop-color="#B7F5D8"/><stop offset="55%" stop-color="#70E7BA"/><stop offset="100%" stop-color="#32CDA1"/></linearGradient>
+ <linearGradient id="gTail" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10BE9E"/><stop offset="100%" stop-color="#08766E"/></linearGradient>
+</defs><g transform="translate(20 -14) scale(.71)">
+<!-- rear conversation/page -->
+<path d="M93 92C93 63 123 44 149 56L278 115C302 126 317 150 317 176V355C317 379 303 400 281 410L177 457C137 475 93 446 93 402Z" fill="url(#gBack)"/>
+<!-- front note -->
+<path d="M188 172C188 143 207 117 235 109L337 80C382 67 426 101 426 147V356C426 395 394 427 355 427H259C220 427 188 395 188 356Z" fill="url(#gFront)" stroke="#D9FFEE" stroke-opacity=".65" stroke-width="4"/>
+<!-- folded speech tail -->
+<path d="M300 388C335 365 373 355 409 358C431 360 443 384 432 403L423 419C415 432 401 440 386 440H301C275 440 266 406 288 393Z" fill="url(#gTail)"/>
+<g fill="#087B70"><rect x="235" y="205" width="126" height="22" rx="11"/><rect x="235" y="260" width="126" height="22" rx="11"/><rect x="235" y="315" width="96" height="22" rx="11"/></g>
+</g><text x="395" y="235" fill="#0A2427" font-family="Inter Display, Inter, Arial, sans-serif" font-size="166" font-weight="650" letter-spacing="-8">Ivuenu</text></svg>

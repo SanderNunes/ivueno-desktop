@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<title>Ivuenu · Fundamentos</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1E6A58}a:hover{color:#17554A}
+@keyframes ivPulse{0%,100%{opacity:1}50%{opacity:.4}}
+.iv-rec{animation:ivPulse 2s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.iv-rec{animation:none}}
+</style>
+</helmet>
+<div style="width: 1440px; min-height: 2900px; box-sizing: border-box; background: #F7F5F2; color: #1F1D1A; font-family: 'Atkinson Hyperlegible Next', 'Segoe UI', system-ui, sans-serif; padding: 72px 80px; display: flex; flex-direction: column; gap: 72px">
+
+<header style="display: flex; justify-content: space-between; align-items: flex-end; gap: 48px; border-bottom: 1px solid #E2DDD5; padding-bottom: 40px">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; align-items: center; gap: 12px">
+<svg width="40" height="40" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#1E6A58"></rect><path d="M8 10h12M8 14h9M8 18h5" stroke="#FFFEFC" stroke-width="2" stroke-linecap="round"></path></svg>
+<span style="font-size: 32px; font-weight: 700; letter-spacing: -0.02em">ivuenu</span>
+</div>
+<h1 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 600; max-width: 720px">Um caderno que ouve. Calmo, privado, e com a gravação sempre à vista.</h1>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; max-width: 640px; font-size: 14px; line-height: 20px; color: #57524B">
+<div style="display: flex; flex-direction: column; gap: 4px"><strong style="color: #1F1D1A">Caderno, não painel</strong>Texto é a interface. Muito espaço, poucas caixas.</div>
+<div style="display: flex; flex-direction: column; gap: 4px"><strong style="color: #1F1D1A">Vermelho = a gravar</strong>Ponto vermelho com tempo. Não serve para mais nada.</div>
+<div style="display: flex; flex-direction: column; gap: 4px"><strong style="color: #1F1D1A">As tuas notas primeiro</strong>O texto da IA vem depois, sempre identificado.</div>
+</div>
+</header>
+
+<section style="display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; align-items: baseline; justify-content: space-between">
+<h2 style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 700">Cor · tokens</h2>
+<span style="font-size: 14px; color: #6B655C">Todos os pares de texto passam 4.5:1. Os nomes de token são iguais nos dois temas.</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px">
+
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; justify-content: space-between; align-items: center"><h3 style="margin: 0; font-size: 16px; font-weight: 700">Claro</h3><span style="font-size: 12px; color: #6B655C">papel quente</span></div>
+<sc-for list="{{lightGroups}}" as="g" hint-placeholder-count="5">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: #6B655C">{{g.name}}</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px">
+<sc-for list="{{g.items}}" as="s" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="height: 52px; border-radius: 8px; border: 1px solid rgba(31,29,26,.10); background: {{s.hex}}"></div>
+<div style="font-size: 13px; font-weight: 600; line-height: 16px">{{s.name}}</div>
+<div style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 12px; color: #57524B">{{s.hex}}</div>
+<div style="font-size: 12px; line-height: 16px; color: #6B655C">{{s.use}}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+
+<div style="background: #1C1B19; color: #EDE9E3; border: 1px solid #312E2A; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; justify-content: space-between; align-items: center"><h3 style="margin: 0; font-size: 16px; font-weight: 700">Escuro</h3><span style="font-size: 12px; color: #A0998F">tinta quente, não preto puro</span></div>
+<sc-for list="{{darkGroups}}" as="g" hint-placeholder-count="5">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: #A0998F">{{g.name}}</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px">
+<sc-for list="{{g.items}}" as="s" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="height: 52px; border-radius: 8px; border: 1px solid rgba(237,233,227,.12); background: {{s.hex}}"></div>
+<div style="font-size: 13px; font-weight: 600; line-height: 16px">{{s.name}}</div>
+<div style="font-family: 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-size: 12px; color: #B9B2A8">{{s.hex}}</div>
+<div style="font-size: 12px; line-height: 16px; color: #A0998F">{{s.use}}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px">
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 16px; font-weight: 700">Cores de orador · claro</h3>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #57524B">Marcador de 4 px e iniciais. O nome aparece sempre ao lado, em cor de texto: a cor nunca é o único sinal. Atribuídas por ordem de quem fala primeiro. Sem vermelho.</p>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
+<sc-for list="{{speakersLight}}" as="s" hint-placeholder-count="8">
+<div style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 1px solid #E2DDD5; border-radius: 8px">
+<span style="width: 28px; height: 28px; border-radius: 999px; background: {{s.hex}}; color: #FFFEFC; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{s.ini}}</span>
+<span style="display: flex; flex-direction: column"><span style="font-size: 13px; font-weight: 600">{{s.name}}</span><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 11px; color: #57524B">{{s.hex}}</span></span>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="background: #1C1B19; color: #EDE9E3; border: 1px solid #312E2A; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 16px; font-weight: 700">Cores de orador · escuro</h3>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #B9B2A8">Mesma ordem, tons mais claros. Iniciais em tinta escura para manter 4.5:1.</p>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
+<sc-for list="{{speakersDark}}" as="s" hint-placeholder-count="8">
+<div style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 1px solid #312E2A; border-radius: 8px">
+<span style="width: 28px; height: 28px; border-radius: 999px; background: {{s.hex}}; color: #151412; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{s.ini}}</span>
+<span style="display: flex; flex-direction: column"><span style="font-size: 13px; font-weight: 600">{{s.name}}</span><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 11px; color: #B9B2A8">{{s.hex}}</span></span>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<section style="display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px">
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><h2 style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 700">Tipografia</h2><span style="font-size: 13px; color: #6B655C">Atkinson Hyperlegible Next · Mono para tempos</span></div>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #57524B">Uma família, desenhada para legibilidade, com acentos completos (ã, ç, ê, õ). A Mono da mesma família dá algarismos tabulares ao temporizador e às horas da transcrição.</p>
+<div style="display: flex; flex-direction: column; border-top: 1px solid #E2DDD5">
+<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid #E2DDD5"><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 12px; color: #57524B">display · 28/36 · 600</span><span style="font-size: 28px; line-height: 36px; font-weight: 600">Planeamento do projeto fibra óptica</span></div>
+<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid #E2DDD5"><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 12px; color: #57524B">title · 20/28 · 700</span><span style="font-size: 20px; line-height: 28px; font-weight: 700">Revisão de preços Q4</span></div>
+<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid #E2DDD5"><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 12px; color: #57524B">reading · 16/26 · 400</span><span style="font-size: 16px; line-height: 26px">Concordo, mas temos de avisar os clientes com um mês de antecedência. Usado nas notas e na transcrição.</span></div>
+<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid #E2DDD5"><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 12px; color: #57524B">ui · 14/20 · 400/600</span><span style="font-size: 14px; line-height: 20px">Botões, menus, linhas de lista, campos. <strong>Nova reunião</strong></span></div>
+<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid #E2DDD5"><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 12px; color: #57524B">caption · 12/16 · 400</span><span style="font-size: 12px; line-height: 16px; color: #57524B">Fica no teu computador. · Guardado há 2 s</span></div>
+<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 24px; align-items: baseline; padding: 16px 0"><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 12px; color: #57524B">mono · 14/20 · 500</span><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 14px; font-weight: 500">00:12:40 · 10:30 · 20/10/2026</span></div>
+</div>
+<p style="margin: 0; font-size: 13px; line-height: 20px; color: #6B655C">Medida de leitura: 68 caracteres no máximo nas notas. Português corre ~30% mais longo: botões nunca têm largura fixa, só mínima.</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 32px">
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 700">Espaço · grelha de 4 px</h2>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{spacing}}" as="s" hint-placeholder-count="8">
+<div style="display: grid; grid-template-columns: 72px 48px minmax(0, 1fr); gap: 12px; align-items: center; font-size: 13px"><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; color: #57524B">space-{{s.k}}</span><span style="font-family: 'Atkinson Hyperlegible Mono', monospace">{{s.px}}</span><span style="height: 12px; border-radius: 3px; background: #9CC7B8; width: {{s.w}}"></span></div>
+</sc-for>
+</div>
+</div>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 700">Cantos</h2>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; font-size: 13px">
+<div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 64px; border: 1.5px solid #1F1D1A; border-radius: 6px"></div><strong>radius-sm 6</strong><span style="color: #6B655C">chips, campos</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 64px; border: 1.5px solid #1F1D1A; border-radius: 8px"></div><strong>radius-md 8</strong><span style="color: #6B655C">botões, linhas</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 64px; border: 1.5px solid #1F1D1A; border-radius: 10px"></div><strong>radius-lg 10</strong><span style="color: #6B655C">painéis, diálogos</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 64px; border: 1.5px solid #1F1D1A; border-radius: 999px"></div><strong>pill</strong><span style="color: #6B655C">indicador a gravar</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px">
+<div style="background: #EFECE7; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 700">Elevação</h2>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #57524B">Contornos primeiro, sombra só para o que flutua.</p>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; font-size: 13px">
+<div style="display: flex; flex-direction: column; gap: 10px"><div style="height: 88px; background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px"></div><strong>e0</strong><span style="color: #57524B">contorno · painéis</span></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><div style="height: 88px; background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; box-shadow: 0 1px 2px rgba(31,29,26,.06)"></div><strong>e1</strong><span style="color: #57524B">cartões</span></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><div style="height: 88px; background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; box-shadow: 0 8px 24px rgba(31,29,26,.10)"></div><strong>e2</strong><span style="color: #57524B">menus, painel de ajuda</span></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><div style="height: 88px; background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; box-shadow: 0 16px 48px rgba(31,29,26,.16)"></div><strong>e3</strong><span style="color: #57524B">diálogos, folhas</span></div>
+</div>
+<p style="margin: 0; font-size: 12px; line-height: 16px; color: #57524B">Escuro: a mesma escala sobe a superfície (#1C1B19 → #24221F → #2B2925) e a sombra passa a rgba(0,0,0,.45).</p>
+</div>
+
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 700">Movimento</h2>
+<div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: #FBE8E6; border-radius: 999px; align-self: flex-start">
+<span class="iv-rec" style="width: 10px; height: 10px; border-radius: 999px; background: #D92D20"></span>
+<span style="font-size: 14px; font-weight: 600; color: #B42318">A gravar</span>
+<span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 14px; font-weight: 500; color: #1F1D1A">00:12:40</span>
+</div>
+<div style="display: flex; flex-direction: column; font-size: 14px; line-height: 20px; border-top: 1px solid #E2DDD5">
+<div style="display: grid; grid-template-columns: 140px 110px minmax(0, 1fr); gap: 16px; padding: 10px 0; border-bottom: 1px solid #E2DDD5"><strong>motion-fast</strong><span style="font-family: 'Atkinson Hyperlegible Mono', monospace">120 ms fade</span><span style="color: #57524B">chips de estado, toasts, hover</span></div>
+<div style="display: grid; grid-template-columns: 140px 110px minmax(0, 1fr); gap: 16px; padding: 10px 0; border-bottom: 1px solid #E2DDD5"><strong>motion-base</strong><span style="font-family: 'Atkinson Hyperlegible Mono', monospace">160 ms slide</span><span style="color: #57524B">painel de ajuda, folhas, menus (8 px)</span></div>
+<div style="display: grid; grid-template-columns: 140px 110px minmax(0, 1fr); gap: 16px; padding: 10px 0; border-bottom: 1px solid #E2DDD5"><strong>motion-slow</strong><span style="font-family: 'Atkinson Hyperlegible Mono', monospace">200 ms</span><span style="color: #57524B">diálogos (fade + escala 0.98 → 1)</span></div>
+<div style="display: grid; grid-template-columns: 140px 110px minmax(0, 1fr); gap: 16px; padding: 10px 0; border-bottom: 1px solid #E2DDD5"><strong>rec-pulse</strong><span style="font-family: 'Atkinson Hyperlegible Mono', monospace">2 s, 1 → .4</span><span style="color: #57524B">só o ponto vermelho. Nada mais pulsa.</span></div>
+<div style="display: grid; grid-template-columns: 140px 110px minmax(0, 1fr); gap: 16px; padding: 10px 0"><strong>easing</strong><span style="font-family: 'Atkinson Hyperlegible Mono', monospace">(.2, 0, 0, 1)</span><span style="color: #57524B">Reduzir movimento: sem pulso, sem deslize, só fade de 0 ms.</span></div>
+</div>
+</div>
+</section>
+
+<section style="display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 32px">
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><h2 style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 700">Ícones</h2><span style="font-size: 13px; color: #6B655C">contorno 1.6 px · grelha 24 · cantos arredondados · tamanho 20 na UI</span></div>
+<div style="display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px; font-size: 12px; color: #57524B">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 4px; border: 1px solid #E2DDD5; border-radius: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"></path></svg>início</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 4px; border: 1px solid #E2DDD5; border-radius: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3"></rect><path d="m8 12 3 3 5-6"></path></svg>tarefas</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 4px; border: 1px solid #E2DDD5; border-radius: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m20 20-4.2-4.2"></path></svg>pesquisar</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 4px; border: 1px solid #E2DDD5; border-radius: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"></path></svg>pasta</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 4px; border: 1px solid #E2DDD5; border-radius: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"></path></svg>microfone</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 4px; border: 1px solid #E2DDD5; border-radius: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4M9 9.5v1M12 8v4M15 9.5v1"></path></svg>som do PC</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 4px; border: 1px solid #E2DDD5; border-radius: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6z"></path><path d="m9 12 2.2 2.2L15.5 10"></path></svg>consentimento</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 4px; border: 1px solid #E2DDD5; border-radius: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6.5A1.5 1.5 0 0 1 6.5 5h11A1.5 1.5 0 0 1 19 6.5V15H5z"></path><path d="M3 18.5h18"></path></svg>no computador</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 4px; border: 1px solid #E2DDD5; border-radius: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8.5" y="8.5" width="11" height="11" rx="2"></rect><path d="M15.5 8.5V6A1.5 1.5 0 0 0 14 4.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"></path></svg>copiar</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 4px; border: 1px solid #E2DDD5; border-radius: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5M5 13v5.5A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5V13"></path></svg>exportar</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 4px; border: 1px solid #E2DDD5; border-radius: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v10H4.5a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1zM7 10l4-6.5a2 2 0 0 1 3 1.9L13.5 9H19a2 2 0 0 1 2 2.3l-1.2 7A2 2 0 0 1 17.8 20H7"></path></svg>útil</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 4px; border: 1px solid #E2DDD5; border-radius: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 7h15M10 4h4M6.5 7l1 12.5A1.5 1.5 0 0 0 9 21h6a1.5 1.5 0 0 0 1.5-1.5l1-12.5"></path></svg>apagar</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 4px; border: 1px solid #E2DDD5; border-radius: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18M8.5 8.5A5 5 0 0 0 6.5 18H17M10.5 5.6A6 6 0 0 1 18 11a3.5 3.5 0 0 1 2.5 5.5"></path></svg>sem ligação</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 4px; border: 1px solid #E2DDD5; border-radius: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M3.5 12h17M12 3.5c2.5 2.5 3.5 5.5 3.5 8.5s-1 6-3.5 8.5c-2.5-2.5-3.5-5.5-3.5-8.5s1-6 3.5-8.5"></path></svg>idioma</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 4px; border: 1px solid #E2DDD5; border-radius: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>bloqueado</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 4px; border: 1px solid #E2DDD5; border-radius: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4A1.5 1.5 0 0 1 4 14.5z"></path></svg>conversa</div>
+</div>
+</div>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 700">Marca</h2>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #57524B">Três linhas de notas, a mais curta por baixo: a página a encher. Não depende do significado da palavra. Nunca em vermelho.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<div style="height: 120px; border-radius: 10px; background: #F7F5F2; display: flex; align-items: center; justify-content: center; gap: 10px"><svg width="32" height="32" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#1E6A58"></rect><path d="M8 10h12M8 14h9M8 18h5" stroke="#FFFEFC" stroke-width="2" stroke-linecap="round"></path></svg><span style="font-size: 24px; font-weight: 700; letter-spacing: -0.02em">ivuenu</span></div>
+<div style="height: 120px; border-radius: 10px; background: #151412; color: #EDE9E3; display: flex; align-items: center; justify-content: center; gap: 10px"><svg width="32" height="32" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#63C3A6"></rect><path d="M8 10h12M8 14h9M8 18h5" stroke="#0D1F1A" stroke-width="2" stroke-linecap="round"></path></svg><span style="font-size: 24px; font-weight: 700; letter-spacing: -0.02em">ivuenu</span></div>
+</div>
+<div style="display: flex; align-items: center; gap: 16px; font-size: 12px; color: #57524B">
+<span style="display: flex; align-items: center; gap: 8px"><svg width="16" height="16" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#1E6A58"></rect><path d="M8 10h12M8 14h9M8 18h5" stroke="#FFFEFC" stroke-width="2.6" stroke-linecap="round"></path></svg>tabuleiro</span>
+<span style="display: flex; align-items: center; gap: 8px"><span style="position: relative; width: 16px; height: 16px"><svg width="16" height="16" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#1E6A58"></rect><path d="M8 10h12M8 14h9M8 18h5" stroke="#FFFEFC" stroke-width="2.6" stroke-linecap="round"></path></svg><span style="position: absolute; right: -3px; bottom: -3px; width: 8px; height: 8px; border-radius: 999px; background: #D92D20; border: 1.5px solid #FFFEFC"></span></span>tabuleiro a gravar</span>
+</div>
+</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const lightGroups = [
+      { name: 'Superfícies', items: [
+        { name: 'bg', hex: '#F7F5F2', use: 'fundo da app' },
+        { name: 'surface', hex: '#FFFEFC', use: 'painéis, notas' },
+        { name: 'sunken', hex: '#EFECE7', use: 'transcrição, barra lateral' },
+        { name: 'border', hex: '#E2DDD5', use: 'contornos, divisórias' } ] },
+      { name: 'Texto', items: [
+        { name: 'text', hex: '#1F1D1A', use: '15.6:1 em bg' },
+        { name: 'text-2', hex: '#57524B', use: 'secundário · 7.2:1' },
+        { name: 'text-3', hex: '#6B655C', use: 'legendas · 5.1:1' },
+        { name: 'border-strong', hex: '#CFC8BD', use: 'campos, hover' } ] },
+      { name: 'Acento · Malaquite', items: [
+        { name: 'accent', hex: '#1E6A58', use: 'ação principal, foco' },
+        { name: 'accent-hover', hex: '#17554A', use: 'hover, texto em soft' },
+        { name: 'accent-soft', hex: '#E2EEE9', use: 'seleção, item ativo' },
+        { name: 'on-accent', hex: '#FFFEFC', use: '6.4:1 sobre accent' } ] },
+      { name: 'Gravação · reservado', items: [
+        { name: 'rec', hex: '#D92D20', use: 'só o ponto a gravar' },
+        { name: 'rec-text', hex: '#B42318', use: 'texto “A gravar”' },
+        { name: 'rec-soft', hex: '#FBE8E6', use: 'fundo do indicador' },
+        { name: 'focus', hex: '#1E6A58', use: 'anel 2 px + 2 px' } ] },
+      { name: 'Semântica', items: [
+        { name: 'warning', hex: '#7A5200', use: 'sobre #FCF1D3' },
+        { name: 'error · ameixa', hex: '#9C1F5A', use: 'sobre #F8E6EF' },
+        { name: 'success', hex: '#3B6E22', use: 'sobre #E9F1E1' },
+        { name: 'info', hex: '#3C4A8C', use: 'sobre #E8EBF7' } ] }
+    ];
+    const darkGroups = [
+      { name: 'Superfícies', items: [
+        { name: 'bg', hex: '#151412', use: 'fundo da app' },
+        { name: 'surface', hex: '#1C1B19', use: 'painéis, notas' },
+        { name: 'sunken', hex: '#121110', use: 'transcrição, barra lateral' },
+        { name: 'border', hex: '#312E2A', use: 'contornos, divisórias' } ] },
+      { name: 'Texto', items: [
+        { name: 'text', hex: '#EDE9E3', use: '14.9:1 em surface' },
+        { name: 'text-2', hex: '#B9B2A8', use: 'secundário · 8.6:1' },
+        { name: 'text-3', hex: '#A0998F', use: 'legendas · 6.3:1' },
+        { name: 'border-strong', hex: '#45413B', use: 'campos, hover' } ] },
+      { name: 'Acento · Malaquite', items: [
+        { name: 'accent', hex: '#63C3A6', use: 'ação principal, foco' },
+        { name: 'accent-hover', hex: '#7ED1B7', use: 'hover' },
+        { name: 'accent-soft', hex: '#183229', use: 'seleção, item ativo' },
+        { name: 'on-accent', hex: '#0D1F1A', use: '8.9:1 sobre accent' } ] },
+      { name: 'Gravação · reservado', items: [
+        { name: 'rec', hex: '#FF5B4F', use: 'só o ponto a gravar' },
+        { name: 'rec-text', hex: '#FF8A80', use: 'texto “A gravar”' },
+        { name: 'rec-soft', hex: '#3A1A17', use: 'fundo do indicador' },
+        { name: 'focus', hex: '#63C3A6', use: 'anel 2 px + 2 px' } ] },
+      { name: 'Semântica', items: [
+        { name: 'warning', hex: '#F0C25A', use: 'sobre #33280F' },
+        { name: 'error · ameixa', hex: '#F08DB9', use: 'sobre #3A1626' },
+        { name: 'success', hex: '#9BCF7A', use: 'sobre #1E2A16' },
+        { name: 'info', hex: '#A9B5F2', use: 'sobre #1E2340' } ] }
+    ];
+    const names = ['Anil', 'Ocre', 'Lagoa', 'Violeta', 'Céu', 'Oliva', 'Castanho', 'Ardósia'];
+    const inis = ['AS', 'BF', 'CN', 'DK', 'EP', 'O6', 'O7', 'O8'];
+    const lh = ['#4A55C8', '#A8660E', '#12806F', '#8A45C0', '#1F78AE', '#5F7A12', '#87573A', '#5B6878'];
+    const dh = ['#9AA2F5', '#E3A75A', '#5FCDB9', '#C79AF0', '#73B9E6', '#B2CB5E', '#D2A07E', '#A9B4C2'];
+    const spacing = [[1,4],[2,8],[3,12],[4,16],[6,24],[8,32],[12,48],[16,64]].map(([k, px]) => ({ k, px: px + ' px', w: (px * 4) + 'px' }));
+    return {
+      lightGroups, darkGroups, spacing,
+      speakersLight: names.map((n, i) => ({ name: 'S' + (i + 1) + ' ' + n, hex: lh[i], ini: inis[i] })),
+      speakersDark: names.map((n, i) => ({ name: 'S' + (i + 1) + ' ' + n, hex: dh[i], ini: inis[i] }))
+    };
+  }
+}
+</script>
+</body>
+</html>

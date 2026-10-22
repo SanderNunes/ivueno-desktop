@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<title>Ivuenu · Nova reunião (telemóvel)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1E6A58}
+button,input,select{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; overflow: hidden; box-sizing: border-box; background: #F7F5F2; color: #1F1D1A; font-family: 'Atkinson Hyperlegible Next', 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 20px; position: relative">
+<div aria-hidden="true" style="position: absolute; inset: 0; padding: 72px 16px; display: flex; flex-direction: column; gap: 14px"><div style="height: 48px; border-radius: 8px; background: #1E6A58"></div><div style="height: 110px; border-radius: 10px; background: #FFFEFC; border: 1px solid #E2DDD5"></div></div>
+<div aria-hidden="true" style="position: absolute; inset: 0; background: rgba(31,29,26,.38)"></div>
+<div role="dialog" aria-modal="true" aria-labelledby="sp-t" style="position: absolute; left: 0; right: 0; bottom: 0; top: 56px; background: #FFFEFC; border-radius: 14px 14px 0 0; box-shadow: 0 -8px 32px rgba(31,29,26,.18); display: flex; flex-direction: column">
+<div aria-hidden="true" style="width: 40px; height: 4px; border-radius: 999px; background: #CFC8BD; margin: 8px auto 0"></div>
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 4px 8px 0 16px"><h2 id="sp-t" style="margin: 0; font-size: 18px; font-weight: 700">Nova reunião</h2><button aria-label="Fechar" style="width: 44px; height: 44px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div>
+<div style="flex: 1; overflow: auto; padding: 8px 16px 16px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; gap: 10px; align-items: center; padding: 10px 12px; border-radius: 8px; background: #EFECE7; font-size: 13px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M5 6.5A1.5 1.5 0 0 1 6.5 5h11A1.5 1.5 0 0 1 19 6.5V15H5z"></path><path d="M3 18.5h18"></path></svg><span>Vai gravar no <strong>Portátil da Ana</strong>. Acompanhas aqui ao vivo.</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="sp-name" style="font-size: 13px; font-weight: 600">Título <span style="font-weight: 400; color: #6B655C">(opcional)</span></label><input id="sp-name" placeholder="Dás nome depois" style="height: 44px; padding: 0 12px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 16px"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="sp-f" style="font-size: 13px; font-weight: 600">Pasta</label><select id="sp-f" style="height: 44px; padding: 0 10px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 16px"><option>Sem pasta</option><option>Clientes</option></select></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><span id="sp-l" style="font-size: 13px; font-weight: 600">Idioma falado</span>
+<div role="radiogroup" aria-labelledby="sp-l" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 3px; background: #EFECE7; border-radius: 8px; gap: 2px">
+<button role="radio" aria-checked="true" style="height: 40px; border-radius: 6px; border: 0; background: #FFFEFC; box-shadow: 0 1px 2px rgba(31,29,26,.10); font-size: 13px; font-weight: 600; color: #1F1D1A">Auto</button>
+<button role="radio" aria-checked="false" style="height: 40px; border-radius: 6px; border: 0; background: transparent; font-size: 13px; color: #57524B">Português</button>
+<button role="radio" aria-checked="false" style="height: 40px; border-radius: 6px; border: 0; background: transparent; font-size: 13px; color: #57524B">English</button>
+<button role="radio" aria-checked="false" style="height: 40px; border-radius: 6px; border: 0; background: transparent; font-size: 13px; color: #57524B">Mais</button>
+</div></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="sp-tr" style="font-size: 13px; font-weight: 600">Traduzir para</label><select id="sp-tr" style="height: 44px; padding: 0 8px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 15px"><option>Não traduzir</option></select></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="sp-st" style="font-size: 13px; font-weight: 600">Estilo das notas</label><select id="sp-st" style="height: 44px; padding: 0 8px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 15px"><option>Escolhe por mim</option></select></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="sp-at" style="font-size: 13px; font-weight: 600">Participantes</label><div style="display: flex; flex-wrap: wrap; gap: 6px; padding: 6px; border: 1px solid #CFC8BD; border-radius: 6px; min-height: 44px; box-sizing: border-box; align-items: center"><span style="height: 30px; padding: 0 10px; border-radius: 6px; background: #EFECE7; display: inline-flex; align-items: center; font-size: 13px">Bruno Fernandes</span><input id="sp-at" placeholder="Nome ou email" style="flex: 1; min-width: 100px; border: 0; outline: 0; font-size: 15px; background: transparent"></div></div>
+<label style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px"><span style="display: flex; flex-direction: column"><span style="font-weight: 600">Guardar a transcrição</span><span style="font-size: 12px; color: #57524B">Desligado = só notas: a transcrição é apagada depois</span></span><input type="checkbox" role="switch" checked style="position: absolute; opacity: 0; width: 1px; height: 1px"><span aria-hidden="true" style="width: 44px; height: 26px; border-radius: 999px; background: #1E6A58; position: relative; flex: none"><span style="position: absolute; top: 3px; left: 21px; width: 20px; height: 20px; border-radius: 999px; background: #FFFEFC"></span></span></label>
+<label style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px"><span style="display: flex; flex-direction: column"><span style="font-weight: 600">Ocultar detalhes sensíveis</span><span style="font-size: 12px; color: #57524B">Cartões e palavras-passe ficam ••••</span></span><input type="checkbox" role="switch" checked style="position: absolute; opacity: 0; width: 1px; height: 1px"><span aria-hidden="true" style="width: 44px; height: 26px; border-radius: 999px; background: #1E6A58; position: relative; flex: none"><span style="position: absolute; top: 3px; left: 21px; width: 20px; height: 20px; border-radius: 999px; background: #FFFEFC"></span></span></label>
+</div>
+<div style="border-top: 1px solid #E2DDD5; padding: 14px 16px 20px; display: flex; flex-direction: column; gap: 10px">
+<strong style="font-size: 15px; line-height: 22px">Avisa os participantes que estão a ser gravados.</strong>
+<div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 8px"><button style="height: 48px; border-radius: 8px; border: 0; background: #1E6A58; color: #FFFEFC; font-size: 16px; font-weight: 600">Já avisei</button><button style="height: 48px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 16px; font-weight: 600">Só eu</button></div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

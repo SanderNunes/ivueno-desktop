@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<title>Ivuenu · Planos</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1E6A58}a:hover{color:#17554A}
+button{font-family:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid #1E6A58;outline-offset:2px}
+</style>
+</helmet>
+<div style="min-height: 100vh; box-sizing: border-box; background: #F7F5F2; color: #1F1D1A; font-family: 'Atkinson Hyperlegible Next', 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 20px; padding: 40px clamp(16px, 4vw, 64px) 64px">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
+<header style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px">
+<h1 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 600">Planos</h1>
+<p style="margin: 0; color: #57524B; max-width: 520px">Em todos os planos pessoais, as reuniões ficam no teu computador. Pagas por mais reuniões e mais ajuda, nunca pela tua privacidade.</p>
+<div role="tablist" aria-label="Tipo de plano" style="display: flex; padding: 3px; background: #EFECE7; border-radius: 8px; gap: 2px">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="2"><button role="tab" aria-selected="{{t.sel}}" onClick="{{t.pick}}" style="{{t.style}}">{{t.label}}</button></sc-for>
+</div>
+</header>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px">
+<sc-for list="{{plans}}" as="p" hint-placeholder-count="3">
+<div style="{{p.card}}">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><strong style="font-size: 18px">{{p.name}}</strong><sc-if value="{{p.current}}" hint-placeholder-val="{{ false }}"><span style="font-size: 12px; font-weight: 600; color: #17554A; background: #E2EEE9; border-radius: 6px; padding: 2px 8px">O teu plano</span></sc-if></div>
+<div><span style="font-size: 32px; line-height: 40px; font-weight: 600">{{p.price}}</span><span style="color: #57524B">{{p.unit}}</span></div>
+<span style="color: #57524B; min-height: 40px">{{p.pitch}}</span>
+<button disabled="{{p.current}}" style="{{p.btn}}">{{p.cta}}</button>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #E2DDD5; padding-top: 14px">
+<sc-for list="{{p.features}}" as="f" hint-placeholder-count="4"><li style="display: flex; gap: 8px; align-items: flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E6A58" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>{{f}}</li></sc-for>
+</ul>
+</div>
+</sc-for>
+</div>
+<span style="text-align: center; font-size: 12px; color: #57524B">Preços indicativos em USD, sem impostos. Pagamento em Kwanza: [A CONFIRMAR].</span>
+
+<section aria-labelledby="pr-cmp" style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; overflow: hidden">
+<h2 id="pr-cmp" style="margin: 0; padding: 16px 20px; font-size: 16px; font-weight: 700; border-bottom: 1px solid #E2DDD5">Comparar planos pessoais</h2>
+<div style="overflow-x: auto">
+<table style="width: 100%; min-width: 640px; border-collapse: collapse; font-size: 14px">
+<thead><tr style="text-align: left; background: #F7F5F2"><th scope="col" style="padding: 12px 20px; font-weight: 600; color: #57524B">Funcionalidade</th><th scope="col" style="padding: 12px 16px; font-weight: 700">Gratuito <span style="font-size: 12px; font-weight: 600; color: #17554A">· atual</span></th><th scope="col" style="padding: 12px 16px; font-weight: 700">Pro</th><th scope="col" style="padding: 12px 16px; font-weight: 700">Pro + Nuvem</th></tr></thead>
+<tbody>
+<tr style="border-top: 1px solid #E2DDD5"><th scope="row" style="padding: 12px 20px; font-weight: 400; text-align: left">Reuniões por mês</th><td style="padding: 12px 16px">10</td><td style="padding: 12px 16px">Sem limite</td><td style="padding: 12px 16px">Sem limite</td></tr>
+<tr style="border-top: 1px solid #E2DDD5"><th scope="row" style="padding: 12px 20px; font-weight: 400; text-align: left">Notas da Ivuenu e tarefas</th><td style="padding: 12px 16px">Sim</td><td style="padding: 12px 16px">Sim</td><td style="padding: 12px 16px">Sim</td></tr>
+<tr style="border-top: 1px solid #E2DDD5"><th scope="row" style="padding: 12px 20px; font-weight: 400; text-align: left">Ajudas ao vivo e conversa</th><td style="padding: 12px 16px">Sim</td><td style="padding: 12px 16px">Sim</td><td style="padding: 12px 16px">Sim</td></tr>
+<tr style="border-top: 1px solid #E2DDD5"><th scope="row" style="padding: 12px 20px; font-weight: 400; text-align: left">Pontos cegos e Treina-me</th><td style="padding: 12px 16px; color: #57524B">Não</td><td style="padding: 12px 16px">Sim</td><td style="padding: 12px 16px">Sim</td></tr>
+<tr style="border-top: 1px solid #E2DDD5"><th scope="row" style="padding: 12px 20px; font-weight: 400; text-align: left">Receitas próprias</th><td style="padding: 12px 16px; color: #57524B">Não</td><td style="padding: 12px 16px">Sim</td><td style="padding: 12px 16px">Sim</td></tr>
+<tr style="border-top: 1px solid #E2DDD5"><th scope="row" style="padding: 12px 20px; font-weight: 400; text-align: left">Transcrição na nuvem</th><td style="padding: 12px 16px; color: #57524B">Não</td><td style="padding: 12px 16px; color: #57524B">Não</td><td style="padding: 12px 16px">Sim, quando escolhes</td></tr>
+<tr style="border-top: 1px solid #E2DDD5"><th scope="row" style="padding: 12px 20px; font-weight: 400; text-align: left">Onde ficam os dados</th><td style="padding: 12px 16px">No computador</td><td style="padding: 12px 16px">No computador</td><td style="padding: 12px 16px">Computador + nuvem encriptada</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 24px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 700; color: #57524B; text-transform: uppercase; letter-spacing: .04em">Folha de upgrade · aberta de “Pontos cegos”</h2>
+<div role="dialog" aria-labelledby="up-t" style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; box-shadow: 0 16px 48px rgba(31,29,26,.12); padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center"><h3 id="up-t" style="margin: 0; font-size: 18px; font-weight: 700">Pontos cegos está no Pro</h3><button aria-label="Fechar" style="width: 36px; height: 36px; border: 0; background: transparent; border-radius: 8px; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div>
+<p style="margin: 0; color: #57524B">Depois da reunião, a Ivuenu mostra o que ficou por discutir: riscos que ninguém levantou, números sem fonte, decisões sem dono. Corre neste computador.</p>
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; border: 1.5px solid #1E6A58; border-radius: 8px"><span style="display: flex; flex-direction: column"><strong>Pro</strong><span style="font-size: 13px; color: #57524B">Reuniões sem limite, todas as ajudas, receitas tuas</span></span><span><strong style="font-size: 20px">$12</strong><span style="color: #57524B">/mês</span></span></div>
+<button style="height: 44px; border-radius: 8px; border: 0; background: #1E6A58; color: #FFFEFC; font-size: 15px; font-weight: 600">Passar para o Pro</button>
+<a href="#" style="align-self: center; font-size: 13px; font-weight: 600">Comparar todos os planos</a>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 700; color: #57524B; text-transform: uppercase; letter-spacing: .04em">Pagamento · ainda não disponível</h2>
+<div role="status" style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 32px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px">
+<strong style="font-size: 18px">Os pagamentos chegam em breve.</strong>
+<p style="margin: 0; color: #57524B; max-width: 380px">Ainda não conseguimos cobrar. Deixa o teu email e avisamos-te no dia em que o Pro abrir. Até lá continuas no Gratuito, sem perder nada.</p>
+<div style="display: flex; gap: 8px; width: 100%; max-width: 400px"><label for="pr-mail" style="position: absolute; width: 1px; height: 1px; overflow: hidden">Email</label><input id="pr-mail" value="ana.silva@exemplo.ao" style="flex: 1; min-width: 0; height: 40px; padding: 0 12px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 14px; font-family: inherit"><button style="height: 40px; padding: 0 14px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 14px; font-weight: 600; color: #1F1D1A">Avisar-me</button></div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { kind: 'personal' }; }
+  renderVals() {
+    const k = this.state.kind;
+    const on = 'height: 34px; padding: 0 16px; border-radius: 6px; border: 0; background: #FFFEFC; box-shadow: 0 1px 2px rgba(31,29,26,.10); font-size: 14px; font-weight: 600; color: #1F1D1A';
+    const off = 'height: 34px; padding: 0 16px; border-radius: 6px; border: 0; background: transparent; font-size: 14px; color: #57524B';
+    const tabs = [['personal', 'Pessoal'], ['enterprise', 'Empresas']].map(([id, label]) => ({ label, sel: k === id ? 'true' : 'false', style: k === id ? on : off, pick: () => this.setState({ kind: id }) }));
+    const cardBase = 'background: #FFFEFC; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 12px; ';
+    const btnPrimary = 'height: 40px; border-radius: 8px; border: 0; background: #1E6A58; color: #FFFEFC; font-size: 14px; font-weight: 600';
+    const btnSecondary = 'height: 40px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 14px; font-weight: 600';
+    const btnCurrent = 'height: 40px; border-radius: 8px; border: 1px solid #E2DDD5; background: #F7F5F2; color: #57524B; font-size: 14px; font-weight: 600';
+    const P = k === 'personal' ? [
+      { name: 'Gratuito', price: '$0', unit: '', pitch: 'Para experimentar com as tuas reuniões.', cta: 'Plano atual', current: true, features: ['10 reuniões por mês', 'Notas da Ivuenu, tarefas e conversa', 'Ajudas ao vivo', 'Tudo no teu computador'] },
+      { name: 'Pro', price: '$12', unit: ' /mês', pitch: 'Para quem tem reuniões todos os dias.', cta: 'Passar para o Pro', current: false, primary: true, features: ['Reuniões sem limite', 'Pontos cegos e Treina-me', 'Receitas próprias', 'Tudo no teu computador'] },
+      { name: 'Pro + Nuvem', price: '$22', unit: ' /mês', pitch: 'Para computadores sem placa gráfica ou uso no browser.', cta: 'Passar para Pro + Nuvem', current: false, features: ['Tudo do Pro', 'Transcrição na nuvem, quando escolhes', 'Acesso no browser e no telemóvel'] }
+    ] : [
+      { name: 'Equipa', price: '$20', unit: ' /lugar /mês', pitch: 'Para equipas de 3 a 50 pessoas.', cta: 'Começar com a equipa', current: false, primary: true, features: ['Tudo do Pro para cada pessoa', 'Funções, convites e regras da empresa', 'Registo de auditoria'] },
+      { name: 'Empresa', price: 'Fala connosco', unit: '', pitch: 'Para bancos, operadoras e setor público.', cta: 'Falar connosco', current: false, features: ['Tudo da Equipa', 'Retenção e nuvem definidas por ti', 'Instalação gerida e apoio dedicado'] }
+    ];
+    const plans = P.map((p) => ({ ...p, card: cardBase + (p.primary ? 'border: 1.5px solid #1E6A58' : 'border: 1px solid #E2DDD5'), btn: p.current ? btnCurrent : p.primary ? btnPrimary : btnSecondary }));
+    return { tabs, plans };
+  }
+}
+</script>
+</body>
+</html>

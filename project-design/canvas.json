@@ -1,0 +1,33 @@
+{"v":3,"createdOnFiles":{"v":1,"at":"2026-10-20T12:05:00Z"},"title":"Ivuenu","launch":{"view":"canvas"},"pages":[],
+"boards":{
+"Main.dc.html":{"x":0,"y":0,"w":1440,"h":2900,"title":"Fundamentos · tokens claro e escuro"},
+"Components.dc.html":{"x":1520,"y":0,"w":1440,"h":3200,"title":"Componentes"},
+"Home.dc.html":{"x":0,"y":3620,"w":1440,"h":980,"title":"6.3 Início","expand":"fill","is_interactive":true},
+"Start.dc.html":{"x":1520,"y":3620,"w":1440,"h":980,"title":"6.4 Nova reunião (diálogo)","expand":"fill","is_interactive":true},
+"Live.dc.html":{"x":3040,"y":3620,"w":1440,"h":980,"title":"6.1 Reunião ao vivo · claro","expand":"fill","is_interactive":true},
+"LiveDark.dc.html":{"x":4560,"y":3620,"w":1440,"h":980,"title":"6.1 Reunião ao vivo · escuro","expand":"fill","is_interactive":true},
+"Detail.dc.html":{"x":6080,"y":3620,"w":1440,"h":1400,"title":"6.2 Detalhe da reunião","expand":"fill","is_interactive":true},
+"HomePhone.dc.html":{"x":0,"y":5440,"w":390,"h":844,"title":"6.3 Início · telemóvel"},
+"StartPhone.dc.html":{"x":470,"y":5440,"w":390,"h":844,"title":"6.4 Nova reunião · opções"},
+"LivePhone.dc.html":{"x":940,"y":5440,"w":390,"h":844,"title":"6.1 Ao vivo · telemóvel","is_interactive":true},
+"DetailPhone.dc.html":{"x":1410,"y":5440,"w":390,"h":844,"title":"6.2 Detalhe · telemóvel"},
+"States.dc.html":{"x":0,"y":6704,"w":1440,"h":2400,"title":"7 Estados"},
+"ActionItems.dc.html":{"x":1520,"y":6704,"w":1440,"h":1000,"title":"6.6 Tarefas","expand":"fill"},
+"Search.dc.html":{"x":3040,"y":6704,"w":1440,"h":1000,"title":"6.7 Pesquisa","expand":"fill"},
+"Settings.dc.html":{"x":4560,"y":6704,"w":1440,"h":2100,"title":"6.8 Definições","expand":"fill"},
+"Auth.dc.html":{"x":0,"y":9524,"w":1440,"h":1000,"title":"6.5 Entrar / Criar conta"},
+"Desktop.dc.html":{"x":1520,"y":9524,"w":1440,"h":1700,"title":"6.9 Só no computador"},
+"Pricing.dc.html":{"x":3040,"y":9524,"w":1440,"h":1500,"title":"6.10 Planos","expand":"fill"},
+"Admin.dc.html":{"x":4560,"y":9524,"w":1440,"h":2400,"title":"6.11 Organização","expand":"fill"},
+"Island.dc.html":{"x":6080,"y":9524,"w":1440,"h":1400,"title":"6.9 Ilha de gravação (desktop)","is_interactive":true},
+"Dictation.dc.html":{"x":7600,"y":9524,"w":1440,"h":1500,"title":"6.9 Ditado","is_interactive":true}
+},
+"order":["Main.dc.html","Components.dc.html","Home.dc.html","Start.dc.html","Live.dc.html","LiveDark.dc.html","Detail.dc.html","HomePhone.dc.html","StartPhone.dc.html","LivePhone.dc.html","DetailPhone.dc.html","States.dc.html","ActionItems.dc.html","Search.dc.html","Settings.dc.html","Auth.dc.html","Desktop.dc.html","Pricing.dc.html","Admin.dc.html","Island.dc.html","Dictation.dc.html"],
+"notes":{
+"t1":{"x":0,"y":-320,"text":"Ivuenu · sistema de design","kind":"title1","maxW":2960},
+"t2":{"x":0,"y":3300,"text":"Percurso principal · Início → Nova reunião → Ao vivo → Parar → Notas","kind":"title1","maxW":7520},
+"t3":{"x":0,"y":5120,"text":"Largura de telemóvel (web, 390 px)","kind":"title1","maxW":1800},
+"t4":{"x":0,"y":6384,"text":"Estados e ecrãs secundários","kind":"title1","maxW":6000},
+"t5":{"x":0,"y":9204,"text":"Conta, computador, planos e organização","kind":"title1","maxW":6000}
+},
+"designSystems":[]}

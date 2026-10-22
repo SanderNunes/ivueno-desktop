@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<title>Ivuenu · Ilha de gravação</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+button,input{font-family:inherit}
+button:focus-visible,input:focus-visible{outline:2px solid #63C3A6;outline-offset:2px}
+@keyframes ivPulse{0%,100%{opacity:1}50%{opacity:.4}}
+.iv-rec{animation:ivPulse 2s ease-in-out infinite}
+.iv-bar{transition:height 90ms linear}
+@media (prefers-reduced-motion: reduce){.iv-rec{animation:none}.iv-bar{transition:none}}
+</style>
+</helmet>
+<div style="width: 1440px; min-height: 1400px; box-sizing: border-box; background: #F7F5F2; color: #1F1D1A; font-family: 'Atkinson Hyperlegible Next', 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 20px; padding: 64px 80px; display: flex; flex-direction: column; gap: 40px">
+
+<header style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; border-bottom: 1px solid #E2DDD5; padding-bottom: 24px">
+<div style="display: flex; flex-direction: column; gap: 6px"><h1 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 600">Ilha de gravação</h1><p style="margin: 0; color: #57524B; max-width: 640px">Uma pílula no topo do ecrã, por cima de qualquer aplicação, enquanto a Ivuenu grava. Mostra que está a gravar e o que está a ouvir: ondas verdes quando falas tu (microfone), claras quando falam os outros (som do computador).</p></div>
+<span style="font-size: 13px; color: #57524B">Clica na ilha para abrir · substitui o mini gravador</span>
+</header>
+
+<section aria-label="Exemplo no ecrã" style="background: #2B3236; border-radius: 12px; height: 560px; position: relative; overflow: hidden">
+<div aria-hidden="true" style="position: absolute; left: 50%; top: 96px; transform: translateX(-50%); width: 880px; height: 420px; background: #1F2427; border-radius: 10px; border: 1px solid #3A4247; display: flex; flex-direction: column">
+<div style="height: 36px; border-bottom: 1px solid #3A4247; display: flex; align-items: center; padding: 0 14px; gap: 8px"><span style="width: 120px; height: 10px; border-radius: 4px; background: #3A4247"></span></div>
+<div style="flex: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; padding: 14px">
+<div style="background: #2B3236; border-radius: 8px; display: flex; align-items: center; justify-content: center"><span style="width: 64px; height: 64px; border-radius: 999px; background: #A8660E; color: #FFFEFC; font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center">BF</span></div>
+<div style="background: #2B3236; border-radius: 8px; display: flex; align-items: center; justify-content: center"><span style="width: 64px; height: 64px; border-radius: 999px; background: #12806F; color: #FFFEFC; font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center">CN</span></div>
+<div style="background: #2B3236; border-radius: 8px; display: flex; align-items: center; justify-content: center"><span style="width: 64px; height: 64px; border-radius: 999px; background: #8A45C0; color: #FFFEFC; font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center">DK</span></div>
+</div>
+</div>
+
+<div style="position: absolute; left: 50%; top: 10px; transform: translateX(-50%); z-index: 2">
+<sc-if value="{{collapsed}}" hint-placeholder-val="{{ true }}">
+<button onClick="{{toggle}}" aria-expanded="false" aria-label="{{ariaLive}}" style="height: 40px; padding: 0 16px 0 14px; border-radius: 999px; border: 1px solid rgba(237,233,227,.10); background: #151412; box-shadow: 0 8px 24px rgba(0,0,0,.45); display: flex; align-items: center; gap: 12px; color: #EDE9E3; cursor: pointer">
+<span class="iv-rec" style="width: 10px; height: 10px; border-radius: 999px; background: #FF5B4F; flex: none"></span>
+<span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 14px; font-weight: 500; min-width: 64px; text-align: left">{{time}}</span>
+<span aria-hidden="true" style="display: flex; align-items: center; gap: 2px; height: 24px; width: 110px">
+<sc-for list="{{mainBars}}" as="b" hint-placeholder-count="22"><span class="iv-bar" style="width: 3px; border-radius: 2px; flex: none; background: {{b.c}}; height: {{b.h}}"></span></sc-for>
+</span>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #B9B2A8; min-width: 64px"><sc-if value="{{isMe}}" hint-placeholder-val="{{ true }}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#63C3A6" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"></path></svg></sc-if><sc-if value="{{isThem}}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EDE9E3" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg></sc-if>{{who}}</span>
+</button>
+</sc-if>
+<sc-if value="{{expanded}}" hint-placeholder-val="{{ false }}">
+<div role="region" aria-label="Ivuenu a gravar" style="width: 460px; box-sizing: border-box; border-radius: 20px; border: 1px solid rgba(237,233,227,.10); background: #151412; box-shadow: 0 16px 48px rgba(0,0,0,.5); color: #EDE9E3; padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 10px">
+<span class="iv-rec" style="width: 10px; height: 10px; border-radius: 999px; background: #FF5B4F; flex: none"></span>
+<span style="font-weight: 600; color: #FF8A80">A gravar</span>
+<span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-weight: 500">{{time}}</span>
+<span style="flex: 1; min-width: 0; text-align: right; font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Revisão de preços Q4</span>
+<button onClick="{{toggle}}" aria-label="Recolher" style="width: 28px; height: 28px; border: 0; background: transparent; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EDE9E3" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 15 6-6 6 6"></path></svg></button>
+</div>
+<div style="display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 8px 12px; align-items: center; padding: 10px 12px; background: #1C1B19; border-radius: 12px">
+<span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #B9B2A8"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#63C3A6" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"></path></svg>Tu</span>
+<span aria-hidden="true" style="display: flex; align-items: center; gap: 2px; height: 26px"><sc-for list="{{micBars}}" as="b" hint-placeholder-count="40"><span class="iv-bar" style="width: 3px; border-radius: 2px; flex: none; background: #63C3A6; height: {{b.h}}"></span></sc-for></span>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #B9B2A8"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EDE9E3" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>Outros</span>
+<span aria-hidden="true" style="display: flex; align-items: center; gap: 2px; height: 26px"><sc-for list="{{sysBars}}" as="b" hint-placeholder-count="40"><span class="iv-bar" style="width: 3px; border-radius: 2px; flex: none; background: #EDE9E3; height: {{b.h}}"></span></sc-for></span>
+</div>
+<div style="display: flex; gap: 8px; align-items: center">
+<label for="il-note" style="position: absolute; width: 1px; height: 1px; overflow: hidden">Nota rápida</label>
+<input id="il-note" placeholder="Nota rápida · Enter junta às tuas notas" style="flex: 1; min-width: 0; height: 36px; padding: 0 12px; border-radius: 10px; border: 1px solid #312E2A; background: #1C1B19; color: #EDE9E3; font-size: 13px">
+<button aria-label="Pausar" title="Pausar" style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #312E2A; background: #1C1B19; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="#EDE9E3" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg></button>
+<button aria-label="Abrir a Ivuenu" title="Abrir a Ivuenu" style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #312E2A; background: #1C1B19; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EDE9E3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-8 8M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"></path></svg></button>
+<button style="height: 36px; padding: 0 12px; border-radius: 10px; border: 0; background: #EDE9E3; color: #151412; font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3" fill="#151412"></rect></svg>Parar</button>
+</div>
+</div>
+</sc-if>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Estados</h2>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+<sc-for list="{{specimens}}" as="s" hint-placeholder-count="8">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="height: 120px; border-radius: 10px; background: {{s.bg}}; display: flex; align-items: flex-start; justify-content: center; padding-top: 14px; box-sizing: border-box">
+<div style="height: 36px; padding: 0 14px 0 12px; border-radius: 999px; border: 1px solid rgba(237,233,227,.10); background: #151412; box-shadow: 0 6px 18px rgba(0,0,0,.35); display: flex; align-items: center; gap: 10px; color: #EDE9E3; max-width: 100%; box-sizing: border-box">
+<span style="width: 10px; height: 10px; border-radius: {{s.dotR}}; background: {{s.dot}}; flex: none"></span>
+<span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 13px; font-weight: 500; color: {{s.timeC}}">{{s.time}}</span>
+<sc-if value="{{s.bars}}" hint-placeholder-val="{{ true }}"><span aria-hidden="true" style="display: flex; align-items: center; gap: 2px; height: 22px"><sc-for list="{{s.bars}}" as="b" hint-placeholder-count="16"><span style="width: 3px; border-radius: 2px; background: {{b.c}}; height: {{b.h}}"></span></sc-for></span></sc-if>
+<sc-if value="{{s.label}}" hint-placeholder-val="{{ false }}"><span style="font-size: 12px; font-weight: 600; color: {{s.labelC}}; white-space: nowrap">{{s.label}}</span></sc-if>
+</div>
+</div>
+<strong>{{s.name}}</strong>
+<span style="font-size: 13px; color: #57524B">{{s.note}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">No início · o único aviso permitido</h2>
+<div style="background: #2B3236; border-radius: 10px; padding: 14px; display: flex; justify-content: center">
+<div role="alertdialog" aria-labelledby="il-c" style="width: 420px; border-radius: 20px; background: #151412; border: 1px solid rgba(237,233,227,.10); box-shadow: 0 16px 48px rgba(0,0,0,.5); color: #EDE9E3; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 10px"><span class="iv-rec" style="width: 10px; height: 10px; border-radius: 999px; background: #FF5B4F"></span><span style="font-family: 'Atkinson Hyperlegible Mono', monospace">00:00:03</span><span style="font-size: 12px; color: #B9B2A8">Chamada detetada · Teams</span></div>
+<strong id="il-c" style="font-size: 15px; line-height: 22px">Avisa os participantes que estão a ser gravados.</strong>
+<div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 8px"><button style="height: 36px; border-radius: 10px; border: 0; background: #63C3A6; color: #0D1F1A; font-size: 14px; font-weight: 700">Já avisei</button><button style="height: 36px; border-radius: 10px; border: 1px solid #45413B; background: #1C1B19; color: #EDE9E3; font-size: 14px; font-weight: 600">Só eu</button></div>
+</div>
+</div>
+<span style="font-size: 13px; color: #57524B">Abre a partir da ilha, não como janela. Se ninguém responder em 15 s, a ilha recolhe e fica com o selo “Aviso por confirmar” até responderes.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Regras</h2>
+<ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px; color: #1F1D1A">
+<li><strong>Tamanhos:</strong> recolhida 40 px de altura, cerca de 320 px de largura; aberta 460 px. Centrada no topo, a 10 px. Pode ir para outro canto; lembra-se do sítio.</li>
+<li><strong>Sempre escura</strong> (#151412) nos dois temas, para se ler sobre qualquer fundo. O ponto vermelho continua a ser o único vermelho.</li>
+<li><strong>Ondas:</strong> 22 barras, a mais recente à direita, 100 ms por barra. Altura = nível do sinal (RMS), entre 3 e 22 px. Verde = microfone, claro = som do computador. O ícone e a palavra (“Tu”, “Outros”) mudam junto: a cor nunca é o único sinal.</li>
+<li><strong>Nunca rouba o foco</strong> do teclado nem aparece em partilhas de ecrã (janela excluída da captura). Interruptor em Definições › Gravação.</li>
+<li><strong>Reduzir movimento:</strong> as barras deixam de se mexer e passam a um medidor estático de 5 níveis; o ponto não pulsa.</li>
+<li><strong>Leitor de ecrã:</strong> anuncia “A gravar” no início e a cada 15 min; as ondas ficam escondidas. Atalho global Ctrl+Shift+I abre e recolhe.</li>
+</ul>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1400}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    const mk = (n) => Array.from({ length: n }, () => 0.04);
+    this.state = { open: false, secs: 760, src: 'me', tick: 0, main: mk(22), mic: mk(40), sys: mk(40) };
+  }
+  componentDidMount() {
+    let reduce = false;
+    try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    this.clock = setInterval(() => this.setState((s) => ({ secs: s.secs + 1 })), 1000);
+    if (reduce) return;
+    this.wave = setInterval(() => this.setState((s) => {
+      const tick = s.tick + 1;
+      const cycle = ['me', 'them', 'them', 'me', 'quiet'];
+      const src = cycle[Math.floor(tick / 32) % cycle.length];
+      const syll = 0.5 + 0.5 * Math.sin(tick * 0.9) * Math.sin(tick * 0.31);
+      const speak = Math.max(0.08, Math.min(1, (0.25 + Math.random() * 0.75) * (0.4 + 0.6 * syll)));
+      const floor = () => 0.03 + Math.random() * 0.04;
+      const micV = src === 'me' ? speak : floor();
+      const sysV = src === 'them' ? speak : floor();
+      const push = (arr, v) => arr.slice(1).concat([v]);
+      return { tick, src, main: push(s.main, src === 'quiet' ? floor() : speak), mic: push(s.mic, micV), sys: push(s.sys, sysV) };
+    }), 100);
+  }
+  componentWillUnmount() { clearInterval(this.clock); clearInterval(this.wave); }
+  renderVals() {
+    const s = this.state;
+    const pad = (n) => String(n).padStart(2, '0');
+    const time = pad(Math.floor(s.secs / 3600)) + ':' + pad(Math.floor(s.secs / 60) % 60) + ':' + pad(s.secs % 60);
+    const h = (v, max) => Math.round(3 + v * (max - 3)) + 'px';
+    const mainC = s.src === 'them' ? '#EDE9E3' : s.src === 'me' ? '#63C3A6' : '#6B655C';
+    const pat = (arr, c) => arr.map((v) => ({ h: h(v, 22), c }));
+    const speech = [0.2, 0.45, 0.8, 0.6, 0.95, 0.5, 0.3, 0.7, 1, 0.65, 0.4, 0.75, 0.55, 0.3, 0.6, 0.85];
+    const flat = speech.map(() => 0.05);
+    const W = '#2B3236', L = '#D8D2C8';
+    const base = { dot: '#FF5B4F', dotR: '999px', timeC: '#EDE9E3', time: '00:12:40', label: '', labelC: '#B9B2A8' };
+    const specimens = [
+      { ...base, bg: W, name: 'Falas tu', note: 'Ondas verdes do microfone.', bars: pat(speech, '#63C3A6') },
+      { ...base, bg: W, name: 'Falam os outros', note: 'Ondas claras do som do computador.', bars: pat(speech.slice().reverse(), '#EDE9E3') },
+      { ...base, bg: L, name: 'Sobre fundo claro', note: 'Mesma ilha: a sombra separa-a do fundo.', bars: pat(speech, '#63C3A6') },
+      { ...base, bg: W, name: 'Silêncio', note: 'Linha baixa. Normal em pausas curtas.', bars: pat(flat, '#6B655C') },
+      { ...base, bg: W, name: 'Sem som há 30 s', note: 'Âmbar. Clicar abre a escolha de microfone.', bars: pat(flat.slice(0, 8), '#6B655C'), label: 'Sem som', labelC: '#F0C25A' },
+      { ...base, bg: W, name: 'Em pausa', note: 'Quadrado cinzento, tempo parado, sem ondas.', dot: '#A0998F', dotR: '3px', timeC: '#A0998F', bars: null, label: 'Em pausa' },
+      { ...base, bg: W, name: 'A religar', note: 'Só a sincronização. A gravação continua.', bars: pat(speech.slice(0, 10), '#63C3A6'), label: 'A religar…', labelC: '#F0C25A' },
+      { ...base, bg: W, name: 'Depois de parar', note: 'Fica 6 s e desaparece. Clicar abre a reunião.', dot: '#63C3A6', dotR: '3px', time: '13 min', bars: null, label: 'A escrever as notas…', labelC: '#8AD8BF' }
+    ];
+    const who = s.src === 'me' ? 'Tu' : s.src === 'them' ? 'Outros' : 'Silêncio';
+    return {
+      time, collapsed: !s.open, expanded: s.open, toggle: () => this.setState({ open: !s.open }),
+      isMe: s.src === 'me', isThem: s.src === 'them', who,
+      ariaLive: 'A gravar, ' + time + '. Abrir controlos',
+      mainBars: pat(s.main, mainC),
+      micBars: s.mic.map((v) => ({ h: h(v, 26) })), sysBars: s.sys.map((v) => ({ h: h(v, 26) })),
+      specimens
+    };
+  }
+}
+</script>
+</body>
+</html>

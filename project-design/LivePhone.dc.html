@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<title>Ivuenu · Ao vivo (telemóvel)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+button,textarea{font-family:inherit}
+textarea:focus{outline:none}
+@keyframes ivPulse{0%,100%{opacity:1}50%{opacity:.4}}
+.iv-rec{animation:ivPulse 2s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.iv-rec{animation:none}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; overflow: hidden; box-sizing: border-box; background: #F7F5F2; color: #1F1D1A; font-family: 'Atkinson Hyperlegible Next', 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 20px; display: flex; flex-direction: column; position: relative">
+<header style="flex: none; background: #FFFEFC; border-bottom: 1px solid #E2DDD5; padding: 10px 12px 0 16px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+<div role="status" aria-label="A gravar, 12 minutos e 40 segundos" style="display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px 0 10px; background: #FBE8E6; border-radius: 999px"><span class="iv-rec" style="width: 10px; height: 10px; border-radius: 999px; background: #D92D20"></span><span style="font-weight: 600; color: #B42318">A gravar</span><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-weight: 500">00:12:40</span></div>
+<button style="height: 44px; padding: 0 14px; border-radius: 8px; border: 0; background: #1F1D1A; color: #FFFEFC; font-weight: 600; display: inline-flex; align-items: center; gap: 8px"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3" fill="#FFFEFC"></rect></svg>Parar</button>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; justify-content: space-between"><strong style="font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Revisão de preços Q4</strong><span style="display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; color: #3B6E22; flex: none"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3B6E22" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6z"></path><path d="m9 12 2.2 2.2L15.5 10"></path></svg>Avisados</span></div>
+<div role="tablist" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0 -12px 0 -16px">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="2"><button role="tab" aria-selected="{{t.sel}}" onClick="{{t.pick}}" style="{{t.style}}">{{t.label}}</button></sc-for>
+</div>
+</header>
+
+<sc-if value="{{isNotes}}" hint-placeholder-val="{{ true }}">
+<div style="flex: 1; min-height: 0; display: flex; flex-direction: column; background: #FFFEFC">
+<label for="lp-n" style="position: absolute; width: 1px; height: 1px; overflow: hidden">As tuas notas</label>
+<textarea id="lp-n" value="{{notes}}" onChange="{{edit}}" placeholder="Escreve aqui o que for importante. O resto, deixa connosco." style="flex: 1; resize: none; border: 0; padding: 16px; font-size: 17px; line-height: 28px; color: #1F1D1A; background: transparent"></textarea>
+<div style="padding: 8px 16px; font-size: 12px; color: #57524B; display: flex; justify-content: space-between; border-top: 1px solid #E2DDD5"><span>Fica no teu computador.</span><span>Guardado</span></div>
+</div>
+</sc-if>
+<sc-if value="{{isTranscript}}" hint-placeholder-val="{{ false }}">
+<div role="log" aria-live="polite" style="flex: 1; min-height: 0; overflow: auto; padding: 16px; display: flex; flex-direction: column; gap: 16px">
+<sc-for list="{{lines}}" as="l" hint-placeholder-count="5">
+<div style="display: grid; grid-template-columns: 4px minmax(0, 1fr); gap: 10px"><span style="background: {{l.color}}; border-radius: 2px"></span><div style="display: flex; flex-direction: column; gap: 2px"><div style="display: flex; gap: 8px; align-items: baseline"><strong>{{l.who}}</strong><span style="font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 12px; color: #6B655C">{{l.t}}</span></div><p style="margin: 0; font-size: 16px; line-height: 25px">{{l.text}}</p><sc-if value="{{l.tr}}" hint-placeholder-val="{{ false }}"><p style="margin: 0; font-size: 14px; line-height: 21px; color: #57524B">{{l.tr}}</p></sc-if></div></div>
+</sc-for>
+</div>
+</sc-if>
+
+<div style="flex: none; padding: 10px 16px 16px; background: #FFFEFC; border-top: 1px solid #E2DDD5; display: flex; gap: 8px">
+<button onClick="{{openSheet}}" aria-haspopup="dialog" style="flex: 1; height: 44px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 15px; font-weight: 600; color: #1F1D1A">Ajudas ao vivo</button>
+<button aria-label="Oradores" style="width: 44px; height: 44px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"></circle><path d="M3 19c.7-3 3-4.8 6-4.8s5.3 1.8 6 4.8M16 5.5a3 3 0 0 1 0 6M18 14.5c1.6.6 2.6 2 3 4"></path></svg></button>
+</div>
+
+<sc-if value="{{sheet}}" hint-placeholder-val="{{ false }}">
+<div aria-hidden="true" onClick="{{closeSheet}}" style="position: absolute; inset: 0; background: rgba(31,29,26,.32)"></div>
+<div role="dialog" aria-label="Ajudas ao vivo" style="position: absolute; left: 0; right: 0; bottom: 0; background: #FFFEFC; border-radius: 14px 14px 0 0; box-shadow: 0 -8px 32px rgba(31,29,26,.18); padding: 8px 16px 20px; display: flex; flex-direction: column; gap: 12px">
+<div aria-hidden="true" style="width: 40px; height: 4px; border-radius: 999px; background: #CFC8BD; margin: 0 auto 4px"></div>
+<div style="display: flex; justify-content: space-between; align-items: center"><strong style="font-size: 16px">Ajudas ao vivo</strong><span style="font-size: 12px; color: #57524B">Só tu vês isto</span></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+<sc-for list="{{helpers}}" as="h" hint-placeholder-count="4"><button onClick="{{h.pick}}" aria-pressed="{{h.on}}" style="{{h.style}}">{{h.label}}</button></sc-for>
+</div>
+<sc-if value="{{answer}}" hint-placeholder-val="{{ false }}">
+<div style="background: #F7F5F2; border-radius: 10px; padding: 14px; display: flex; flex-direction: column; gap: 10px"><p style="margin: 0; font-size: 15px; line-height: 24px; white-space: pre-line">{{answer}}</p><button style="align-self: flex-start; height: 40px; padding: 0 14px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 14px; font-weight: 600; color: #1F1D1A">Copiar</button></div>
+</sc-if>
+</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { tab: 'notes', sheet: false, helper: null, notes: 'Preços Q4\n• subir 5% em Jan? Bruno a favor\n• avisar clientes 1 mês antes\n☐ Carla → lista de preços (sexta)\n' }; }
+  renderVals() {
+    const s = this.state;
+    const on = 'height: 48px; border: 0; background: transparent; border-bottom: 2px solid #1E6A58; font-size: 15px; font-weight: 700; color: #1F1D1A';
+    const off = 'height: 48px; border: 0; background: transparent; border-bottom: 2px solid transparent; font-size: 15px; color: #57524B';
+    const tabs = [['transcript', 'Transcrição'], ['notes', 'Notas']].map(([id, label]) => ({ label, sel: s.tab === id ? 'true' : 'false', style: s.tab === id ? on : off, pick: () => this.setState({ tab: id }) }));
+    const C = { ana: '#4A55C8', bruno: '#A8660E', carla: '#12806F', dom: '#8A45C0' };
+    const lines = [[C.bruno, 'Bruno Fernandes', '00:11:40', 'Acho que devíamos subir os preços em cinco por cento a partir de Janeiro.'], [C.dom, 'Domingos Kiala', '00:12:02', 'If we go to five percent, we need a retention offer ready.', 'Se formos para cinco por cento, precisamos de uma oferta de retenção pronta.'], [C.ana, 'Ana Silva', '00:12:15', 'Concordo, mas temos de avisar os clientes com um mês de antecedência.'], [C.carla, 'Carla Neto', '00:12:31', 'Eu envio a nova lista de preços até sexta-feira.']].map(([color, who, t, text, tr]) => ({ color, who, t, text, tr: tr || '' }));
+    const H = { say: ['Sugere o que dizer', 'Pergunta ao Domingos que oferta de retenção tem em mente e quanto custa por cliente.'], catch: ['Põe-me a par', '• Bruno propõe +5% em Janeiro.\n• Domingos quer uma oferta de retenção antes.\n• Carla envia a lista até sexta.'], explain: ['Explica isso', '“Retention offer”: uma oferta para quem ameaça cancelar.'], ask: ['Perguntas a fazer', '• Quem avisa o suporte?\n• O aumento vale para o pós-pago?'] };
+    const hOn = 'min-height: 48px; padding: 0 10px; border-radius: 10px; border: 1px solid #1E6A58; background: #E2EEE9; font-size: 14px; font-weight: 600; color: #17554A';
+    const hOff = 'min-height: 48px; padding: 0 10px; border-radius: 10px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 14px; font-weight: 600; color: #1F1D1A';
+    const helpers = Object.keys(H).map((k) => ({ label: H[k][0], on: s.helper === k ? 'true' : 'false', style: s.helper === k ? hOn : hOff, pick: () => this.setState({ helper: k }) }));
+    return {
+      tabs, lines, helpers, isNotes: s.tab === 'notes', isTranscript: s.tab === 'transcript',
+      sheet: s.sheet, openSheet: () => this.setState({ sheet: true }), closeSheet: () => this.setState({ sheet: false, helper: null }),
+      answer: s.helper ? H[s.helper][1] : '',
+      notes: s.notes, edit: (e) => this.setState({ notes: e.target.value })
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<title>Ivuenu · Entrar e criar conta</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1E6A58}a:hover{color:#17554A}
+button,input{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1440px; min-height: 1000px; box-sizing: border-box; background: #F7F5F2; color: #1F1D1A; font-family: 'Atkinson Hyperlegible Next', 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 20px; padding: 72px 80px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; align-items: start">
+
+<section aria-labelledby="au-1" style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; font-weight: 700; color: #57524B; text-transform: uppercase; letter-spacing: .04em">Entrar</span>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: center; gap: 10px"><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#1E6A58"></rect><path d="M8 10h12M8 14h9M8 18h5" stroke="#FFFEFC" stroke-width="2" stroke-linecap="round"></path></svg><span style="font-size: 18px; font-weight: 700; letter-spacing: -0.02em">ivuenu</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><h1 id="au-1" style="margin: 0; font-size: 22px; line-height: 30px; font-weight: 600">Bem-vinda de volta</h1><p style="margin: 0; color: #57524B">As tuas reuniões ficam no teu computador. A conta só guarda o teu plano e definições.</p></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="a1-m" style="font-size: 13px; font-weight: 600">Email</label><input id="a1-m" type="email" value="ana.silva@exemplo.ao" style="height: 44px; padding: 0 12px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 15px"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="a1-p" style="font-size: 13px; font-weight: 600">Palavra-passe</label><input id="a1-p" type="password" value="••••••••••••" style="height: 44px; padding: 0 12px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 15px"></div>
+<button style="height: 44px; border-radius: 8px; border: 0; background: #1E6A58; color: #FFFEFC; font-size: 15px; font-weight: 600">Entrar</button>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #57524B">
+<span><span aria-disabled="true" style="color: #6B655C; text-decoration: underline dotted">Esqueci-me da palavra-passe</span> · em breve</span>
+<span><span aria-disabled="true" style="color: #6B655C; text-decoration: underline dotted">Entrar com a empresa (SSO)</span> · em breve</span>
+</div>
+<div style="border-top: 1px solid #E2DDD5; padding-top: 14px; font-size: 13px">Ainda não tens conta? <a href="#" style="font-weight: 600">Criar conta</a></div>
+</div>
+</section>
+
+<section aria-labelledby="au-2" style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; font-weight: 700; color: #57524B; text-transform: uppercase; letter-spacing: .04em">Criar conta</span>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 6px"><h1 id="au-2" style="margin: 0; font-size: 22px; line-height: 30px; font-weight: 600">Criar conta</h1><p style="margin: 0; color: #57524B">Grátis para 10 reuniões por mês. Sem cartão.</p></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="a2-n" style="font-size: 13px; font-weight: 600">Nome</label><input id="a2-n" value="Ana Silva" style="height: 44px; padding: 0 12px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 15px"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="a2-m" style="font-size: 13px; font-weight: 600">Email</label><input id="a2-m" type="email" value="ana.silva@exemplo.ao" style="height: 44px; padding: 0 12px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 15px"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="a2-p" style="font-size: 13px; font-weight: 600">Palavra-passe</label><input id="a2-p" type="password" value="•••••••" aria-describedby="a2-ph" style="height: 44px; padding: 0 12px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 15px">
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; padding-top: 2px"><span style="height: 4px; border-radius: 999px; background: #B07A12"></span><span style="height: 4px; border-radius: 999px; background: #B07A12"></span><span style="height: 4px; border-radius: 999px; background: #E2DDD5"></span><span style="height: 4px; border-radius: 999px; background: #E2DDD5"></span></div>
+<span id="a2-ph" style="font-size: 12px; color: #7A5200">Fraca · faltam 3 caracteres para o mínimo de 10</span></div>
+<button style="height: 44px; border-radius: 8px; border: 0; background: #1E6A58; color: #FFFEFC; font-size: 15px; font-weight: 600">Criar conta</button>
+<span style="font-size: 12px; color: #57524B">Ao criar conta aceitas os <a href="#">termos</a> e a <a href="#">política de privacidade</a>.</span>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; font-weight: 700; color: #57524B; text-transform: uppercase; letter-spacing: .04em">Erros</span>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<div role="alert" style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 8px; background: #F8E6EF; color: #9C1F5A"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9C1F5A" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" style="flex: none; margin-top: 1px"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5v5.5M12 16.2v.3"></path></svg><span>O email ou a palavra-passe não estão certos.</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="a3-m" style="font-size: 13px; font-weight: 600">Email</label><input id="a3-m" value="ana.silva@exemplo.ao" style="height: 44px; padding: 0 12px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 15px"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="a3-p" style="font-size: 13px; font-weight: 600">Palavra-passe</label><input id="a3-p" type="password" value="" aria-invalid="true" style="height: 44px; padding: 0 12px; border-radius: 6px; border: 1.5px solid #9C1F5A; background: #FFFEFC; font-size: 15px"></div>
+<span style="font-size: 12px; color: #57524B">Mensagem genérica de propósito: não diz qual dos dois está errado.</span>
+<div style="height: 1px; background: #E2DDD5"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="a4-m" style="font-size: 13px; font-weight: 600">Email · criar conta</label><input id="a4-m" value="bruno.fernandes@exemplo.ao" aria-invalid="true" aria-describedby="a4-e" style="height: 44px; padding: 0 12px; border-radius: 6px; border: 1.5px solid #9C1F5A; background: #FFFEFC; font-size: 15px"><span id="a4-e" style="font-size: 12px; color: #9C1F5A">Já existe uma conta com este email. <a href="#" style="color: #9C1F5A; font-weight: 600">Entrar</a></span></div>
+</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

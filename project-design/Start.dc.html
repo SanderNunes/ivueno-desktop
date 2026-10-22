@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<title>Ivuenu · Nova reunião</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1E6A58}a:hover{color:#17554A}
+button,input,select{font-family:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #1E6A58;outline-offset:2px}
+</style>
+</helmet>
+<div style="min-height: 100vh; box-sizing: border-box; background: #F7F5F2; color: #1F1D1A; font-family: 'Atkinson Hyperlegible Next', 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 20px; position: relative; display: flex">
+
+<div aria-hidden="true" style="position: absolute; inset: 0; display: flex">
+<div style="width: 248px; background: #EFECE7; border-right: 1px solid #E2DDD5; padding: 20px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px"><div style="height: 28px; width: 110px; border-radius: 6px; background: #E2DDD5"></div><div style="height: 40px; border-radius: 8px; background: #1E6A58"></div><div style="height: 12px; width: 70%; border-radius: 4px; background: #E2DDD5"></div><div style="height: 12px; width: 55%; border-radius: 4px; background: #E2DDD5"></div><div style="height: 12px; width: 62%; border-radius: 4px; background: #E2DDD5"></div></div>
+<div style="flex: 1; padding: 40px 56px; display: flex; flex-direction: column; gap: 18px"><div style="height: 28px; width: 160px; border-radius: 6px; background: #E2DDD5"></div><div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px"><div style="height: 110px; border-radius: 10px; background: #FFFEFC; border: 1px solid #E2DDD5"></div><div style="height: 110px; border-radius: 10px; background: #FFFEFC; border: 1px solid #E2DDD5"></div><div style="height: 110px; border-radius: 10px; background: #FFFEFC; border: 1px solid #E2DDD5"></div></div><div style="height: 14px; width: 45%; border-radius: 4px; background: #E2DDD5"></div><div style="height: 14px; width: 60%; border-radius: 4px; background: #E2DDD5"></div><div style="height: 14px; width: 52%; border-radius: 4px; background: #E2DDD5"></div></div>
+</div>
+<div aria-hidden="true" style="position: absolute; inset: 0; background: rgba(31,29,26,.38)"></div>
+
+<div style="position: relative; flex: 1; display: flex; align-items: flex-start; justify-content: center; padding: 72px 16px 32px">
+<div role="dialog" aria-modal="true" aria-labelledby="sd-title" style="width: 100%; max-width: 560px; box-sizing: border-box; background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; box-shadow: 0 16px 48px rgba(31,29,26,.16); display: flex; flex-direction: column">
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 24px 0"><h2 id="sd-title" style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 700">Nova reunião</h2><a href="Home.dc.html" aria-label="Fechar" style="width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a></div>
+
+<div style="padding: 16px 24px 20px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="sd-name" style="font-size: 13px; font-weight: 600">Título <span style="font-weight: 400; color: #6B655C">(opcional)</span></label><input id="sd-name" value="Chamada com cliente: Banco Exemplo" style="height: 40px; padding: 0 12px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 15px"><span style="font-size: 12px; color: #6B655C">Do teu calendário · 14:00–14:45</span></div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 6px; align-items: center">
+<span style="height: 26px; padding: 0 8px; border-radius: 6px; background: #EFECE7; font-size: 12px; display: inline-flex; align-items: center">{{langLabel}}</span>
+<span style="height: 26px; padding: 0 8px; border-radius: 6px; background: #EFECE7; font-size: 12px; display: inline-flex; align-items: center">Notas: Chamada de vendas</span>
+<span style="height: 26px; padding: 0 8px; border-radius: 6px; background: #EFECE7; font-size: 12px; display: inline-flex; align-items: center">Clientes</span>
+<span style="height: 26px; padding: 0 8px; border-radius: 6px; background: #EFECE7; font-size: 12px; display: inline-flex; align-items: center">{{keepLabel}}</span>
+<span style="height: 26px; padding: 0 8px; border-radius: 6px; background: #EFECE7; font-size: 12px; display: inline-flex; align-items: center">{{hideLabel}}</span>
+<button aria-expanded="{{optionsOpen}}" aria-controls="sd-options" onClick="{{toggleOptions}}" style="height: 28px; padding: 0 8px; border-radius: 6px; border: 0; background: transparent; color: #17554A; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px">Opções<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#17554A" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" style="{{chevronStyle}}"><path d="m6 9 6 6 6-6"></path></svg></button>
+</div>
+
+<sc-if value="{{optionsOpen}}" hint-placeholder-val="{{ false }}">
+<div id="sd-options" style="display: flex; flex-direction: column; gap: 14px; padding: 16px; border-radius: 8px; background: #F7F5F2">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="sd-folder" style="font-size: 13px; font-weight: 600">Pasta</label><select id="sd-folder" style="height: 36px; padding: 0 10px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 14px"><option>Clientes</option><option>Equipa</option><option>Sem pasta</option></select></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="sd-style" style="font-size: 13px; font-weight: 600">Estilo das notas</label><select id="sd-style" style="height: 36px; padding: 0 10px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 14px"><option>Chamada de vendas</option><option>Geral</option><option>Um para um</option><option>Stand-up</option><option>Entrevista</option><option>Brainstorm</option><option>Escolhe por mim</option></select></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px"><span id="sd-lang-l" style="font-size: 13px; font-weight: 600">Idioma falado</span>
+<div role="radiogroup" aria-labelledby="sd-lang-l" style="display: flex; flex-wrap: wrap; padding: 3px; background: #EFECE7; border-radius: 8px; gap: 2px; align-self: flex-start">
+<sc-for list="{{langs}}" as="l" hint-placeholder-count="4"><button role="radio" aria-checked="{{l.on}}" onClick="{{l.pick}}" style="{{l.style}}">{{l.label}}</button></sc-for>
+</div>
+<span style="font-size: 12px; color: #6B655C">Auto acompanha quem muda entre português e inglês a meio da frase.</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="sd-tr" style="font-size: 13px; font-weight: 600">Traduzir para</label><select id="sd-tr" style="height: 36px; padding: 0 10px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 14px; align-self: flex-start; min-width: 200px"><option>Não traduzir</option><option>Português</option><option>English</option></select></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="sd-att" style="font-size: 13px; font-weight: 600">Participantes</label>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; padding: 6px; border: 1px solid #CFC8BD; border-radius: 6px; background: #FFFEFC; align-items: center">
+<span style="height: 26px; padding: 0 4px 0 8px; border-radius: 6px; background: #EFECE7; display: inline-flex; align-items: center; gap: 4px; font-size: 13px">Domingos Kiala<button aria-label="Remover Domingos Kiala" style="width: 20px; height: 20px; border: 0; background: transparent; padding: 0; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></span>
+<span style="height: 26px; padding: 0 4px 0 8px; border-radius: 6px; background: #EFECE7; display: inline-flex; align-items: center; gap: 4px; font-size: 13px">Esperança Pinto<button aria-label="Remover Esperança Pinto" style="width: 20px; height: 20px; border: 0; background: transparent; padding: 0; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></span>
+<input id="sd-att" placeholder="Nome ou email" style="flex: 1; min-width: 120px; height: 26px; border: 0; outline: 0; font-size: 13px; background: transparent">
+</div></div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding-top: 4px">
+<label style="display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer"><span style="display: flex; flex-direction: column"><span style="font-weight: 600">Guardar a transcrição depois das notas</span><span style="font-size: 12px; color: #57524B">{{keepHint}}</span></span><input type="checkbox" role="switch" checked="{{keep}}" onChange="{{toggleKeep}}" style="position: absolute; opacity: 0; width: 1px; height: 1px"><span aria-hidden="true" style="{{keepTrack}}"><span style="{{keepKnob}}"></span></span></label>
+<label style="display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer"><span style="display: flex; flex-direction: column"><span style="font-weight: 600">Ocultar detalhes sensíveis</span><span style="font-size: 12px; color: #57524B">Números de cartão e palavras-passe ficam ••••</span></span><input type="checkbox" role="switch" checked="{{hide}}" onChange="{{toggleHide}}" style="position: absolute; opacity: 0; width: 1px; height: 1px"><span aria-hidden="true" style="{{hideTrack}}"><span style="{{hideKnob}}"></span></span></label>
+</div>
+</div>
+</sc-if>
+</div>
+
+<div style="border-top: 1px solid #E2DDD5; padding: 20px 24px 24px; display: flex; flex-direction: column; gap: 14px; background: #FFFEFC; border-radius: 0 0 10px 10px">
+<div style="display: flex; gap: 12px; align-items: flex-start"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E6A58" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6z"></path><path d="m9 12 2.2 2.2L15.5 10"></path></svg><div style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 16px; line-height: 24px">Avisa os participantes que estão a ser gravados.</strong><span style="font-size: 13px; color: #57524B">A tua resposta fica no registo de consentimento desta reunião.</span></div></div>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<a href="Live.dc.html" style="flex: 1 1 180px; height: 44px; border-radius: 8px; background: #1E6A58; color: #FFFEFC; font-size: 15px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center">Já avisei</a>
+<a href="Live.dc.html" style="flex: 1 1 140px; height: 44px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; color: #1F1D1A; font-size: 15px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center">Só eu</a>
+</div>
+<div style="display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 12px; color: #57524B">
+<span>Os dois botões começam a gravar. “Só eu” é para notas pessoais, sem mais ninguém.</span>
+</div>
+<div style="display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center; font-size: 12px; color: #57524B; padding-top: 10px; border-top: 1px solid #E2DDD5">
+<span style="display: inline-flex; align-items: center; gap: 6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6.5A1.5 1.5 0 0 1 6.5 5h11A1.5 1.5 0 0 1 19 6.5V15H5z"></path><path d="M3 18.5h18"></path></svg>Fica no teu computador.</span>
+<span style="display: inline-flex; align-items: center; gap: 8px">Microfone do portátil · Som do computador<a href="Settings.dc.html" style="font-weight: 600">Mudar</a></span>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":980}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { optionsOpen: false, lang: 'auto', keep: true, hide: true }; }
+  renderVals() {
+    const s = this.state;
+    const segOn = 'height: 32px; padding: 0 12px; border-radius: 6px; border: 0; background: #FFFEFC; box-shadow: 0 1px 2px rgba(31,29,26,.10); font-size: 13px; font-weight: 600; color: #1F1D1A';
+    const segOff = 'height: 32px; padding: 0 12px; border-radius: 6px; border: 0; background: transparent; font-size: 13px; color: #57524B';
+    const langDefs = [['auto', 'Auto'], ['pt', 'Português'], ['en', 'English'], ['more', 'Mais…']];
+    const langs = langDefs.map(([id, label]) => ({ label, on: s.lang === id ? 'true' : 'false', style: s.lang === id ? segOn : segOff, pick: () => this.setState({ lang: id }) }));
+    const labelFor = { auto: 'Idioma: automático', pt: 'Idioma: português', en: 'Idioma: English', more: 'Idioma: outro' };
+    const track = (on) => 'width: 40px; height: 24px; border-radius: 999px; position: relative; flex: none; background: ' + (on ? '#1E6A58' : '#CFC8BD');
+    const knob = (on) => 'position: absolute; top: 3px; width: 18px; height: 18px; border-radius: 999px; background: #FFFEFC; left: ' + (on ? '19px' : '3px');
+    return {
+      optionsOpen: s.optionsOpen,
+      toggleOptions: () => this.setState({ optionsOpen: !s.optionsOpen }),
+      chevronStyle: s.optionsOpen ? 'transform: rotate(180deg)' : '',
+      langs, langLabel: labelFor[s.lang],
+      keep: s.keep, hide: s.hide,
+      toggleKeep: () => this.setState({ keep: !s.keep }),
+      toggleHide: () => this.setState({ hide: !s.hide }),
+      keepTrack: track(s.keep), keepKnob: knob(s.keep),
+      hideTrack: track(s.hide), hideKnob: knob(s.hide),
+      keepLabel: s.keep ? 'Guardar transcrição' : 'Só notas',
+      keepHint: s.keep ? 'Podes rever o que foi dito mais tarde.' : 'Só notas: a transcrição é apagada depois',
+      hideLabel: s.hide ? 'Ocultar sensíveis' : 'Sem ocultação'
+    };
+  }
+}
+</script>
+</body>
+</html>

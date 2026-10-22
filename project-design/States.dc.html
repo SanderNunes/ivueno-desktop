@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<title>Ivuenu · Estados</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1E6A58}
+button,input{font-family:inherit}
+@keyframes ivShimmer{0%{background-position:-200px 0}100%{background-position:200px 0}}
+.iv-skel{background:linear-gradient(90deg,#EFECE7 0,#E6E2DB 50%,#EFECE7 100%);background-size:400px 100%;animation:ivShimmer 1.4s linear infinite}
+@keyframes ivPulse{0%,100%{opacity:1}50%{opacity:.4}}
+.iv-rec{animation:ivPulse 2s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.iv-skel,.iv-rec{animation:none}}
+</style>
+</helmet>
+<div style="width: 1440px; min-height: 2400px; box-sizing: border-box; background: #F7F5F2; color: #1F1D1A; font-family: 'Atkinson Hyperlegible Next', 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 20px; padding: 72px 80px; display: flex; flex-direction: column; gap: 32px">
+<header style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #E2DDD5; padding-bottom: 24px">
+<h1 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 600">Estados</h1>
+<span style="color: #57524B; max-width: 640px; text-align: right">Regra geral: o conteúdo que já existe fica visível; o estado aparece no sítio onde importa, nunca como bloqueio de ecrã inteiro.</span>
+</header>
+
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start">
+
+<section style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 700; color: #57524B; text-transform: uppercase; letter-spacing: .04em">A carregar · Início</h2>
+<div aria-busy="true" style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<div class="iv-skel" style="height: 20px; width: 120px; border-radius: 4px"></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px"><div class="iv-skel" style="height: 84px; border-radius: 10px"></div><div class="iv-skel" style="height: 84px; border-radius: 10px"></div></div>
+<div style="display: flex; flex-direction: column; gap: 14px"><div style="display: flex; justify-content: space-between"><div class="iv-skel" style="height: 14px; width: 55%; border-radius: 4px"></div><div class="iv-skel" style="height: 14px; width: 60px; border-radius: 4px"></div></div><div style="display: flex; justify-content: space-between"><div class="iv-skel" style="height: 14px; width: 68%; border-radius: 4px"></div><div class="iv-skel" style="height: 14px; width: 60px; border-radius: 4px"></div></div><div style="display: flex; justify-content: space-between"><div class="iv-skel" style="height: 14px; width: 40%; border-radius: 4px"></div><div class="iv-skel" style="height: 14px; width: 60px; border-radius: 4px"></div></div></div>
+</div>
+<p style="margin: 0; font-size: 12px; color: #57524B">Esqueletos com a forma real. Barra lateral e Nova reunião já ativas: o carregamento nunca impede de começar a gravar.</p>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 700; color: #57524B; text-transform: uppercase; letter-spacing: .04em">Vazio · utilizador novo</h2>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 40px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px">
+<h3 style="margin: 0; font-size: 22px; line-height: 30px; font-weight: 600">Grava a tua primeira reunião.</h3>
+<p style="margin: 0; color: #57524B; max-width: 300px">Funciona com Zoom, Meet, Teams, WhatsApp ou uma conversa na mesma sala. Nenhum bot entra na chamada.</p>
+<button style="height: 48px; padding: 0 24px; border-radius: 8px; border: 0; background: #1E6A58; color: #FFFEFC; font-size: 16px; font-weight: 600">Começar a gravar</button>
+<span style="font-size: 12px; color: #57524B">Fica no teu computador.</span>
+</div>
+<p style="margin: 0; font-size: 12px; color: #57524B">Sem ilustração. “A seguir” mostra “Liga o teu calendário” como ação secundária, por baixo.</p>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 700; color: #57524B; text-transform: uppercase; letter-spacing: .04em">Erro com nova tentativa</h2>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<div role="alert" style="display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 8px; background: #F8E6EF"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9C1F5A" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" style="flex: none; margin-top: 1px"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5v5.5M12 16.2v.3"></path></svg><div style="display: flex; flex-direction: column; gap: 4px"><strong style="color: #9C1F5A">Não foi possível carregar a pesquisa.</strong><span>O índice local está a ser reconstruído depois da atualização. Demora cerca de 1 minuto.</span></div></div>
+<button style="align-self: flex-start; height: 36px; padding: 0 14px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 14px; font-weight: 600; color: #1F1D1A">Tentar outra vez</button>
+<div style="height: 1px; background: #E2DDD5"></div>
+<div style="display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 8px; background: #F7F5F2"><span style="flex: 1">Microfone não encontrado. Liga o auricular ou escolhe outro.</span><button style="height: 32px; padding: 0 12px; border-radius: 6px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 13px; font-weight: 600; color: #1F1D1A">Escolher</button></div>
+</div>
+<p style="margin: 0; font-size: 12px; color: #57524B">Ameixa para erro, nunca vermelho. Diz o motivo em palavras simples e o que fazer.</p>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 700; color: #57524B; text-transform: uppercase; letter-spacing: .04em">Sem ligação</h2>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; overflow: hidden">
+<div role="status" style="display: flex; gap: 10px; align-items: center; padding: 10px 16px; background: #FCF1D3; color: #7A5200; font-size: 13px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 3l18 18M8.5 8.5A5 5 0 0 0 6.5 18H17M10.5 5.6A6 6 0 0 1 18 11a3.5 3.5 0 0 1 2.5 5.5"></path></svg>Sem ligação. Guardamos tudo e enviamos quando voltares.</div>
+<div style="padding: 16px 20px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between"><strong>Revisão de preços Q4</strong><span style="font-size: 12px; color: #57524B">Guardado neste computador</span></div>
+<div style="display: flex; justify-content: space-between"><strong>Reunião semanal da equipa</strong><span style="font-size: 12px; color: #57524B">Por sincronizar</span></div>
+</div>
+<div style="padding: 14px 20px; border-top: 1px solid #E2DDD5; display: flex; flex-direction: column; gap: 6px; background: #F7F5F2">
+<strong style="font-size: 13px">Licença · só no computador</strong>
+<span style="font-size: 13px">Liga-te à internet para continuar a usar a Ivuenu. Tens até 27/10 sem ligação.</span>
+<span style="font-size: 12px; color: #57524B">Nunca interrompe uma gravação: aparece só depois de parares.</span>
+</div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 700; color: #57524B; text-transform: uppercase; letter-spacing: .04em">Bloqueado pelo plano</h2>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<button disabled style="height: 30px; padding: 0 12px; border-radius: 999px; border: 1px solid #E2DDD5; background: #F7F5F2; color: #57524B; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Pontos cegos</button>
+<button disabled style="height: 30px; padding: 0 12px; border-radius: 999px; border: 1px solid #E2DDD5; background: #F7F5F2; color: #57524B; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Treina-me</button>
+</div>
+<div style="border: 1px solid #E2DDD5; border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 8px; background: #F7F5F2">
+<strong style="display: inline-flex; gap: 8px; align-items: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Receitas próprias</strong>
+<span style="color: #57524B">Cria as tuas ajudas de um clique, como “Proposta ao cliente”. Incluído no Pro.</span>
+<a href="#" style="font-weight: 600">Ver o que o Pro inclui</a>
+</div>
+<label style="display: flex; align-items: center; justify-content: space-between; gap: 16px; opacity: .75"><span style="display: flex; flex-direction: column"><span style="font-weight: 600">Transcrição na nuvem</span><span style="font-size: 12px; color: #57524B">Mais rápida em computadores sem placa gráfica · Pro + Nuvem</span></span><input type="checkbox" role="switch" disabled style="position: absolute; opacity: 0; width: 1px; height: 1px"><span aria-hidden="true" style="width: 40px; height: 24px; border-radius: 999px; background: #E2DDD5; position: relative; flex: none"><span style="position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 999px; background: #FFFEFC"></span></span></label>
+</div>
+<p style="margin: 0; font-size: 12px; color: #57524B">Sempre visível, com cadeado e uma frase. Qualquer clique abre a folha de upgrade (6.10).</p>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 700; color: #57524B; text-transform: uppercase; letter-spacing: .04em">Limite do plano atingido</h2>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<div role="status" style="display: flex; gap: 12px; align-items: center; padding: 12px 16px; border-radius: 8px; background: #FCF1D3; color: #7A5200"><span style="flex: 1">Usaste 10 de 10 reuniões este mês.</span><a href="#" style="color: #7A5200; font-weight: 600">Ver planos</a></div>
+<button disabled aria-describedby="lim-h" style="height: 40px; border-radius: 8px; border: 0; background: #E2DDD5; color: #57524B; font-size: 14px; font-weight: 600">Nova reunião</button>
+<span id="lim-h" style="font-size: 13px; color: #57524B">Podes continuar a ler, editar e exportar todas as reuniões. Novas gravações voltam a 1 de Novembro, ou já com o Pro.</span>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 700; color: #57524B; text-transform: uppercase; letter-spacing: .04em">Guardar · guardado · conflito</h2>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; gap: 20px; font-size: 12px; color: #57524B; flex-wrap: wrap">
+<span style="display: inline-flex; gap: 6px; align-items: center"><span style="width: 6px; height: 6px; border-radius: 999px; background: #A39C91"></span>A guardar…</span>
+<span style="display: inline-flex; gap: 6px; align-items: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Guardado</span>
+<span style="display: inline-flex; gap: 6px; align-items: center; color: #7A5200; font-weight: 600"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 3l18 18M8.5 8.5A5 5 0 0 0 6.5 18H17M10.5 5.6A6 6 0 0 1 18 11a3.5 3.5 0 0 1 2.5 5.5"></path></svg>Guardado só aqui</span>
+</div>
+<div role="alertdialog" aria-labelledby="cf-t" style="border: 1px solid #E2DDD5; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 8px 24px rgba(31,29,26,.10)">
+<strong id="cf-t" style="font-size: 15px">As tuas notas mudaram noutro dispositivo.</strong>
+<span style="color: #57524B">Editaste no Portátil da Ana e no browser ao mesmo tempo. Nada se perdeu: escolhe que versão fica.</span>
+<div style="display: flex; gap: 8px; flex-wrap: wrap"><button style="height: 36px; padding: 0 14px; border-radius: 8px; border: 0; background: #1E6A58; color: #FFFEFC; font-size: 14px; font-weight: 600">Manter as minhas</button><button style="height: 36px; padding: 0 14px; border-radius: 8px; border: 1px solid #CFC8BD; background: #FFFEFC; font-size: 14px; font-weight: 600; color: #1F1D1A">Usar as outras</button><button style="height: 36px; padding: 0 12px; border-radius: 8px; border: 0; background: transparent; font-size: 14px; font-weight: 600; color: #1F1D1A">Comparar</button></div>
+</div>
+</div>
+<p style="margin: 0; font-size: 12px; color: #57524B">Guardar automático a cada pausa de 1 s. Conflito aparece por cima do editor, não em toast.</p>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 700; color: #57524B; text-transform: uppercase; letter-spacing: .04em">Sem permissão · membro</h2>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 8px; background: #E8EBF7; color: #3C4A8C; font-size: 13px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3C4A8C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><rect x="4" y="3.5" width="16" height="17" rx="2"></rect><path d="M8.5 8h2M13.5 8h2M8.5 12h2M13.5 12h2"></path></svg><span>Regras do Banco Exemplo: só no computador, reuniões guardadas 90 dias, aviso de gravação obrigatório.</span></div>
+<label style="display: flex; align-items: center; justify-content: space-between; gap: 16px"><span style="display: flex; flex-direction: column"><span style="font-weight: 600">Guardar a transcrição</span><span style="font-size: 12px; color: #57524B">Definido pela tua organização</span></span><span style="display: inline-flex; gap: 6px; align-items: center; font-size: 13px; color: #57524B"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57524B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Ligado</span></label>
+<span style="font-size: 12px; color: #57524B">Controlos de admin (Organização, convites, regras) não aparecem para membros. Regras que os afetam aparecem só como leitura, com a origem dita.</span>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 700; color: #57524B; text-transform: uppercase; letter-spacing: .04em">Transcrição apagada · só notas</h2>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 32px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px">
+<strong style="font-size: 16px">Transcrição apagada</strong>
+<span style="color: #57524B; max-width: 320px">Esta foi uma reunião só de notas. A transcrição foi apagada a 16/10 às 08:28, depois de as notas serem escritas.</span>
+<span style="font-size: 12px; color: #57524B">A conversa e as ajudas usam só as notas.</span>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 10px; grid-column: span 2">
+<h2 style="margin: 0; font-size: 13px; font-weight: 700; color: #57524B; text-transform: uppercase; letter-spacing: .04em">Conteúdo longo</h2>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 20px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; font-weight: 600; color: #57524B">Título muito longo · cabeçalho (2 linhas, depois corta)</span>
+<h3 style="margin: 0; font-size: 22px; line-height: 30px; font-weight: 600; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden">Chamada com cliente: Banco Exemplo — renovação do contrato de serviços geridos, revisão do SLA para 2027 e plano de migração da rede de fibra óptica em Luanda Sul</h3>
+<span style="font-size: 12px; font-weight: 600; color: #57524B; margin-top: 8px">Mesma linha na lista (1 linha, reticências; título completo no hover e no leitor de ecrã)</span>
+<div style="display: flex; gap: 16px; align-items: center; padding: 10px 12px; background: #F7F5F2; border-radius: 8px"><span style="flex: 1; min-width: 0; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Chamada com cliente: Banco Exemplo — renovação do contrato de serviços geridos, revisão do SLA</span><span style="font-size: 12px; color: #57524B">16:00</span></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; font-weight: 600; color: #57524B">40 tarefas · agrupadas, 5 por reunião, depois “mostrar mais”</span>
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; background: #F7F5F2; border-radius: 8px"><strong>Planeamento do projeto fibra óptica</strong><span style="font-size: 12px; color: #57524B">12 em aberto</span></div>
+<button style="align-self: flex-start; height: 32px; padding: 0 10px; border: 0; background: transparent; font-weight: 600; color: #1F1D1A">Mostrar mais 7</button>
+<span style="font-size: 12px; font-weight: 600; color: #57524B; margin-top: 8px">Transcrição com 1500 linhas · lista virtual + saltar para a hora</span>
+<div style="display: flex; gap: 8px; align-items: center"><label for="lc-time" style="font-size: 13px">Ir para</label><input id="lc-time" value="01:24:00" style="width: 100px; height: 32px; padding: 0 10px; border-radius: 6px; border: 1px solid #CFC8BD; font-family: 'Atkinson Hyperlegible Mono', monospace; font-size: 13px"><span style="font-size: 12px; color: #57524B">linha 1 102 de 1 512</span></div>
+</div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 700; color: #57524B; text-transform: uppercase; letter-spacing: .04em">Notas por escrever</h2>
+<div style="background: #FFFEFC; border: 1px solid #E2DDD5; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<strong>Chamada com cliente: Banco Exemplo</strong>
+<span style="color: #57524B">A gravação ficou guardada, mas as notas ainda não foram escritas. Isto acontece quando o computador desliga antes de terminar.</span>
+<div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap"><button style="height: 36px; padding: 0 14px; border-radius: 8px; border: 0; background: #1E6A58; color: #FFFEFC; font-size: 14px; font-weight: 600">Escrever notas</button><span style="font-size: 12px; color: #57524B">Cerca de 2 min neste computador</span></div>
+</div>
+</section>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2400}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
